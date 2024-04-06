@@ -1,0 +1,25 @@
+:root {
+    font-family: Roboto;
+    color: rgba(216, 211, 211, 0.87);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.backgroundVideo {
+    position: fixed; /* or absolute */
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1; /* Ensure this is behind content but above any colored background */
+}
+
+.content-overlay {
+    position: relative; /* This makes z-index applicable */
+    z-index: 10; /* Higher than video's z-index */
+}
