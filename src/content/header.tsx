@@ -23,7 +23,7 @@ const Header: React.FC = () => {
                 paddingTop={{ base: "5px", lg: "10px" }}
             >
                 <Image
-                    src="../../public/assets/logo_lg.png"
+                    src="../../assets/logo_lg.png"
                     alt="logo"
                     borderRadius="full"
                     position="absolute"
