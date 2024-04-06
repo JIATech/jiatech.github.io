@@ -8,7 +8,11 @@ interface SelfWritingTextProps {
     cursor: boolean;
 }
 
-const SelfWritingText: React.FC<SelfWritingTextProps> = ({ phrases, erase, cursor }) => {
+export const SelfWritingText: React.FC<SelfWritingTextProps> = ({
+    phrases,
+    erase,
+    cursor,
+}) => {
     const [text, setText] = useState("");
     const [phraseIndex, setPhraseIndex] = useState(0);
     const [isWriting, setIsWriting] = useState(true);
@@ -54,4 +58,3 @@ const SelfWritingText: React.FC<SelfWritingTextProps> = ({ phrases, erase, curso
     }
 };
 
-export default SelfWritingText;

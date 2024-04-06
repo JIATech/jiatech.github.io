@@ -30,7 +30,7 @@ const VideoBackground: React.FC<VideoBackgroundProps> = ({ children }) => {
                             : "invert(1) grayscale(0.8) blur(8px)",
                 }}
             >
-                <source src="/src/assets/video3.mp4" type="video/mp4" />
+                <source src="../../public/assets/video3.mp4" type="video/mp4" />
                 Tu navegador no soporta el tag de video.
             </video>
             {children} {/* Renderiza los children pasados al componente */}

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Box, useColorMode, Image } from '@chakra-ui/react';
-import SelfWritingText from './selfWritingText';
+import { SelfWritingText } from './selfWritingText';
 import ToggleDarkMode from '../Toggle.tsx';
 
 
@@ -23,7 +23,7 @@ const Header: React.FC = () => {
                 paddingTop={{ base: "5px", lg: "10px" }}
             >
                 <Image
-                    src="/src/assets/logo_lg_looka.com.png"
+                    src="../../public/assets/logo_lg.png"
                     alt="logo"
                     borderRadius="full"
                     position="absolute"

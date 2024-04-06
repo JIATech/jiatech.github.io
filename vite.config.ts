@@ -1,20 +1,12 @@
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import { resolve } from "path";
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react-refresh';
+import svgrPlugin from 'vite-plugin-svgr'; // Para importar SVG como componentes React
 
 // https://vitejs.dev/config/
-export default defineConfig(({ command, mode }) => {
-  console.log("command", command);
-  console.log("mode", mode);
-
-    return {
-      plugins: [react()],
-      build: {
-        rollupOptions: {
-          input: {
-            main: resolve(__dirname, "index.html"),
-          }
-        }
-      }
-    }
+export default defineConfig({
+  plugins: [
+    react(), // Habilita soporte para React con fast refresh
+    svgrPlugin(), // Habilita la importación de archivos SVG como componentes React
+    // Aquí puedes agregar más plugins según necesites
+  ],
 });

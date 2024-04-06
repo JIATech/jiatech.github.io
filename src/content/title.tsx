@@ -7,7 +7,7 @@ import {
     ModalBody,
     useDisclosure,
 } from "@chakra-ui/react";
-import SelfWritingText from "./selfWritingText";
+import { SelfWritingText } from "./selfWritingText";
 import Login from "./login";
 
 const Title: React.FC = () => {
@@ -26,7 +26,7 @@ const Title: React.FC = () => {
             >
                 <Avatar
                     name="Juan Arnaboldi"
-                    src="/src/assets/profile2.jpeg"
+                    src="../../public/assets/profile2.jpeg"
                     size={"md"}
                     onClick={onOpen}
                     _hover={{ cursor: "pointer" }}
@@ -37,7 +37,7 @@ const Title: React.FC = () => {
                     <ModalContent bg="transparent" shadow="none">
                         <ModalBody>
                             <Image
-                                src="/src/assets/profile2.jpeg"
+                                src="../../public/assets/profile2.jpeg"
                                 display={"block"}
                                 m={"auto"}
                                 alt="Juan Arnaboldi"
