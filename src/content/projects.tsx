@@ -1,5 +1,5 @@
 import { Grid, GridItem, Box, SimpleGrid, Card, CardHeader } from "@chakra-ui/react";
-import { Heading, Button, CardBody, CardFooter } from "@chakra-ui/react";
+import { Heading, Button, CardBody, CardFooter, Image } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
 
 const ProjectsContent = () => {
@@ -29,16 +29,20 @@ const ProjectsContent = () => {
                         shadow={"none"}
                     >
                         <CardHeader>
-                            <Heading>Proyecto 1</Heading>
+                            <Heading as="h2" size="lg" fontFamily={"monospace"}
+                            >Proyecto Lorem</Heading>
                         </CardHeader>
                         <CardBody>
                             <SimpleGrid columns={2} spacing={10}>
-                                <Box>Descripción</Box>
-                                <Box>Imagen</Box>
+                                <Box as="span" fontFamily={"monospace"}
+                                >React Front Page with a lot of Lorem in it</Box>
+                                <Image src="../../assets/lorem.png" />
                             </SimpleGrid>
                         </CardBody>
                         <CardFooter>
-                            <Button>Ver más</Button>
+                            <Button onClick={() => window.open("https://jiatech.github.io/lorem-react-app.github.io/")}>
+                                Ver más
+                            </Button>
                         </CardFooter>
                     </Card>
                 </GridItem>

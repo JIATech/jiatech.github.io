@@ -19,7 +19,7 @@ const { colorMode } = useColorMode();
             <Accordion allowToggle>
                 <AccordionItem border={"none"}>
                     <h2 style={{ margin: "0", padding: "0" }}>
-                        <AccordionButton padding={0} margin={0}> 
+                        <AccordionButton padding={0} margin={0}>
                             <Box textAlign="left" padding={0} margin={0}>
                                 Proyectos
                             </Box>
@@ -28,22 +28,30 @@ const { colorMode } = useColorMode();
                     </h2>
                     <AccordionPanel pb={4}>
                         <Box>
-                            <ChakraLink as={ReactRouterLink} to="/htmlcss">
+                            <ChakraLink
+                                href="https://jiatech.github.io/lorem-react-app.github.io/"
+                                isExternal
+                            >
+                                Proyecto Lorem
+                            </ChakraLink>
+                        </Box>
+                        <Box>
+                            <ChakraLink as={ReactRouterLink} to="#">
                                 Proyecto HTML/CSS
                             </ChakraLink>
                         </Box>
                         <Box>
-                            <ChakraLink as={ReactRouterLink} to="/spa">
+                            <ChakraLink as={ReactRouterLink} to="#">
                                 Proyecto SPA
                             </ChakraLink>
                         </Box>
                         <Box>
-                            <ChakraLink as={ReactRouterLink} to="/svelte">
+                            <ChakraLink as={ReactRouterLink} to="#">
                                 Proyecto Svelte
                             </ChakraLink>
                         </Box>
                         <Box>
-                            <ChakraLink as={ReactRouterLink} to="/vue">
+                            <ChakraLink as={ReactRouterLink} to="#">
                                 Proyecto Vue
                             </ChakraLink>
                         </Box>

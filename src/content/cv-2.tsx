@@ -26,6 +26,7 @@ const CV_2: React.FC = () => {
     const phrases10 = ["Proyecto SPA"];
     const phrases11 = ["Proyecto Svelte"];
     const phrases12 = ["Proyecto Vue"];
+    const phrases13 = ["Proyecto Lorem"];
     return (
         <Stack
             paddingLeft={"5px"}
@@ -114,7 +115,19 @@ const CV_2: React.FC = () => {
                     </AccordionButton>
                     <AccordionPanel fontSize={"14px"}>
                         <Box>
-                            <ChakraLink as={ReactRouterLink} to="/htmlcss">
+                            <ChakraLink
+                                as={ReactRouterLink}
+                                to="https://jiatech.github.io/lorem-react-app.github.io/"
+                            >
+                                <SelfWritingText
+                                    phrases={phrases13}
+                                    erase={false}
+                                    cursor={false}
+                                />
+                            </ChakraLink>
+                        </Box>
+                        <Box>
+                            <ChakraLink as={ReactRouterLink} to="#">
                                 <SelfWritingText
                                     phrases={phrases9}
                                     erase={false}
@@ -123,7 +136,7 @@ const CV_2: React.FC = () => {
                             </ChakraLink>
                         </Box>
                         <Box>
-                            <ChakraLink as={ReactRouterLink} to="/spa">
+                            <ChakraLink as={ReactRouterLink} to="#">
                                 <SelfWritingText
                                     phrases={phrases10}
                                     erase={false}
@@ -132,7 +145,7 @@ const CV_2: React.FC = () => {
                             </ChakraLink>
                         </Box>
                         <Box>
-                            <ChakraLink as={ReactRouterLink} to="/svelte">
+                            <ChakraLink as={ReactRouterLink} to="#">
                                 <SelfWritingText
                                     phrases={phrases11}
                                     erase={false}
@@ -141,7 +154,7 @@ const CV_2: React.FC = () => {
                             </ChakraLink>
                         </Box>
                         <Box>
-                            <ChakraLink as={ReactRouterLink} to="/vue">
+                            <ChakraLink as={ReactRouterLink} to="#">
                                 <SelfWritingText
                                     phrases={phrases12}
                                     erase={false}

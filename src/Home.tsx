@@ -32,7 +32,7 @@ const Home = () => {
                             backgroundColor={
                                 colorMode === "dark"
                                     ? "rgba(0,0,0,0)"
-                                    : "rgba(0,0,0,0.15)"
+                                    : "rgba(0,0,0,0.40)"
                             }
                         >
                             <GridItem
