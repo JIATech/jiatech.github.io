@@ -52,11 +52,11 @@ const CV_2: React.FC = () => {
                         cursor={false}
                     />
                 </Box>
-                    <SelfWritingText
-                        phrases={phrases3}
-                        erase={false}
-                        cursor={false}
-                    />
+                <SelfWritingText
+                    phrases={phrases3}
+                    erase={false}
+                    cursor={false}
+                />
                 <Box as="span" fontWeight="bold">
                     <SelfWritingText
                         phrases={phrases4}
@@ -64,11 +64,11 @@ const CV_2: React.FC = () => {
                         cursor={false}
                     />
                 </Box>
-                    <SelfWritingText
-                        phrases={phrases5}
-                        erase={false}
-                        cursor={false}
-                    />
+                <SelfWritingText
+                    phrases={phrases5}
+                    erase={false}
+                    cursor={false}
+                />
                 <Box as="span" fontWeight="bold">
                     <SelfWritingText
                         phrases={phrases6}
@@ -116,8 +116,7 @@ const CV_2: React.FC = () => {
                     <AccordionPanel fontSize={"14px"}>
                         <Box>
                             <ChakraLink
-                                as={ReactRouterLink}
-                                to="https://jiatech.github.io/lorem-react-app.github.io/"
+                                href="https://jiatech.github.io/lorem-react-app.github.io/"
                             >
                                 <SelfWritingText
                                     phrases={phrases13}
