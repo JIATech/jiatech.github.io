@@ -22,11 +22,11 @@ const CV_2: React.FC = () => {
     const phrases6 = ["Tiempo en el puesto:"];
     const phrases7 = ["Proyectos"];
     const phrases8 = ["Lista de proyectos"];
-    const phrases9 = ["Proyecto HTML/CSS"];
-    const phrases10 = ["Proyecto SPA"];
-    const phrases11 = ["Proyecto Svelte"];
-    const phrases12 = ["Proyecto Vue"];
-    const phrases13 = ["Proyecto Lorem"];
+    const phrases9 = ["Proyecto HTML/CSS (Próximamente)"];
+    const phrases10 = ["Proyecto SPA (Próximamente)"];
+    const phrases11 = ["Proyecto Svelte (Próximamente)"];
+    const phrases12 = ["Proyecto Vue (Próximamente)"];
+    const phrases13 = ["React Lorem (Nuevo!)"];
     return (
         <Stack
             paddingLeft={"5px"}
@@ -116,7 +116,7 @@ const CV_2: React.FC = () => {
                     <AccordionPanel fontSize={"14px"}>
                         <Box>
                             <ChakraLink
-                                href="https://jiatech.github.io/lorem-react-app.github.io/"
+                                href="https://jiatech.github.io/lorem-react-app.github.io/" isExternal
                             >
                                 <SelfWritingText
                                     phrases={phrases13}

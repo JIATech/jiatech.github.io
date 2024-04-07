@@ -1,10 +1,82 @@
-import React from 'react';
-import { Box, useColorMode, Accordion, AccordionItem, AccordionButton, AccordionPanel, AccordionIcon } from '@chakra-ui/react';
-import { Link as ReactRouterLink } from 'react-router-dom'
-import { Link as ChakraLink } from '@chakra-ui/react'
+import React from "react";
+import {
+    Box,
+    useColorMode,
+    Accordion,
+    AccordionItem,
+    AccordionButton,
+    AccordionPanel,
+    AccordionIcon,
+} from "@chakra-ui/react";
+import { Link as ReactRouterLink } from "react-router-dom";
+import { Link as ChakraLink } from "@chakra-ui/react";
+import {
+    Modal,
+    ModalOverlay,
+    ModalContent,
+    ModalHeader,
+    ModalFooter,
+    ModalBody,
+    ModalCloseButton,
+    Button,
+    useDisclosure,
+} from "@chakra-ui/react";
+
+const OpenModal = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure();
+
+    return (
+        <>
+            <Button
+                onClick={onOpen}
+                style={{
+                    margin: "0",
+                    padding: "0",
+                    backgroundColor: "rgba(0,0,0,0)",
+                    color: "white",
+                }}
+                fontWeight={"normal"}
+            >
+                Contacto
+            </Button>
+            <Modal isOpen={isOpen} onClose={onClose} isCentered>
+                <ModalOverlay />
+                <ModalContent backgroundColor="rgba(0,0,0,0.9)" color="white">
+                    <ModalHeader>Contacto</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <Box>
+                            <ChakraLink
+                                href="https://linkedin.com/in/juan-arnaboldi"
+                                isExternal
+                            >
+                                LinkedIn Page
+                            </ChakraLink>
+                        </Box>
+                        <Box>Wsap: 221-690-8850</Box>
+                        <Box>E-mail: arnaboldi.juan@gmail.com</Box>
+                        <Box>
+                            <ChakraLink
+                                href="https://github.com/JIATech"
+                                isExternal
+                            >
+                                GitHub Page
+                            </ChakraLink>
+                        </Box>
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button colorScheme="blue" mr={3} onClick={onClose}>
+                            Cerrar
+                        </Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
+        </>
+    );
+};
 
 const Nav: React.FC = () => {
-const { colorMode } = useColorMode();
+    const { colorMode } = useColorMode();
     return (
         <Box
             as="nav"
@@ -28,11 +100,8 @@ const { colorMode } = useColorMode();
                     </h2>
                     <AccordionPanel pb={4}>
                         <Box>
-                            <ChakraLink
-                                href="https://jiatech.github.io/lorem-react-app.github.io/"
-                                isExternal
-                            >
-                                Proyecto Lorem
+                            <ChakraLink as={ReactRouterLink} to="/projects">
+                                React Lorem
                             </ChakraLink>
                         </Box>
                         <Box>
@@ -58,11 +127,7 @@ const { colorMode } = useColorMode();
                     </AccordionPanel>
                 </AccordionItem>
             </Accordion>
-            <Box>
-                <ChakraLink as={ReactRouterLink} to="#">
-                    Contacto
-                </ChakraLink>
-            </Box>
+            {OpenModal()}
         </Box>
     );
 };
