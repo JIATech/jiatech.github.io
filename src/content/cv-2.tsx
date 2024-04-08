@@ -52,25 +52,25 @@ const CV_2: React.FC = () => {
                         phrases={phrases2}
                         erase={false}
                         cursor={false}
-                    />
+                    /><br />
                 </Box>
                 <SelfWritingText
                     phrases={phrases3}
                     erase={false}
                     cursor={false}
-                />
+                /><br />
                 <Box as="span" fontWeight="bold">
                     <SelfWritingText
                         phrases={phrases4}
                         erase={false}
                         cursor={false}
                     />
-                </Box>
+                </Box><br />
                 <SelfWritingText
                     phrases={phrases5}
                     erase={false}
                     cursor={false}
-                />
+                /><br />
                 <Box as="span" fontWeight="bold">
                     <SelfWritingText
                         phrases={phrases6}

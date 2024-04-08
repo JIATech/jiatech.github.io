@@ -54,7 +54,7 @@ export const SelfWritingText: React.FC<SelfWritingTextProps> = ({
             </Box>
         );
     } else {
-        return <div className="self-writing-text">{text}</div>;
+        return <Box as="span" className="self-writing-text">{text}</Box>;
     }
 };
 

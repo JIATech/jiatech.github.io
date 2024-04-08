@@ -157,13 +157,13 @@ const CV_1: React.FC = () => {
                             phrases={phrases13}
                             erase={false}
                             cursor={false}
-                        />
+                        /><br/>
                     </Box>{" "}
                     <SelfWritingText
                         phrases={phrases14}
                         erase={false}
                         cursor={false}
-                    />
+                    /><br/>
                     <SelfWritingText
                         phrases={phrases15}
                         erase={false}
