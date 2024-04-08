@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import {
     Box,
     useColorMode,
@@ -24,6 +25,7 @@ import {
 
 const OpenModal = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+    const { t } = useTranslation();
 
     return (
         <>
@@ -37,12 +39,12 @@ const OpenModal = () => {
                 }}
                 fontWeight={"normal"}
             >
-                Contacto
+                {t("contact")}
             </Button>
             <Modal isOpen={isOpen} onClose={onClose} isCentered>
                 <ModalOverlay />
                 <ModalContent backgroundColor="rgba(0,0,0,0.9)" color="white">
-                    <ModalHeader>Contacto</ModalHeader>
+                    <ModalHeader>{t("contact")}</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
                         <Box>
@@ -66,7 +68,7 @@ const OpenModal = () => {
                     </ModalBody>
                     <ModalFooter>
                         <Button colorScheme="blue" mr={3} onClick={onClose}>
-                            Cerrar
+                            {t("close")}
                         </Button>
                     </ModalFooter>
                 </ModalContent>
@@ -77,6 +79,7 @@ const OpenModal = () => {
 
 const Nav: React.FC = () => {
     const { colorMode } = useColorMode();
+    const { t } = useTranslation();
     return (
         <Box
             as="nav"
@@ -93,7 +96,7 @@ const Nav: React.FC = () => {
                     <h2 style={{ margin: "0", padding: "0" }}>
                         <AccordionButton padding={0} margin={0}>
                             <Box textAlign="left" padding={0} margin={0}>
-                                Proyectos
+                                {t("projects")}
                             </Box>
                             <AccordionIcon />
                         </AccordionButton>
@@ -101,27 +104,27 @@ const Nav: React.FC = () => {
                     <AccordionPanel pb={4}>
                         <Box>
                             <ChakraLink as={ReactRouterLink} to="/projects">
-                                React Lorem
+                                {t("projectReact")}
                             </ChakraLink>
                         </Box>
                         <Box>
                             <ChakraLink as={ReactRouterLink} to="#">
-                                Proyecto HTML/CSS
+                                {t("projectHTML")}
                             </ChakraLink>
                         </Box>
                         <Box>
                             <ChakraLink as={ReactRouterLink} to="#">
-                                Proyecto SPA
+                                {t("projectSPA")}
                             </ChakraLink>
                         </Box>
                         <Box>
                             <ChakraLink as={ReactRouterLink} to="#">
-                                Proyecto Svelte
+                                {t("projectSvelte")}
                             </ChakraLink>
                         </Box>
                         <Box>
                             <ChakraLink as={ReactRouterLink} to="#">
-                                Proyecto Vue
+                                {t("projectVue")}
                             </ChakraLink>
                         </Box>
                     </AccordionPanel>

@@ -1,10 +1,12 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Text, Stack, Divider, Center, useColorMode, List, ListItem, Box } from "@chakra-ui/react";
 import { SelfWritingText } from "./selfWritingText";
 
 const CV_3: React.FC = () => {
     const { colorMode } = useColorMode();
-    const phrases1 = ["Habilidades Técnicas Principales"];
+    const { t } = useTranslation();
+    const phrases1 = [t("skills")];
     const phrases2 = ["> JavaScript"];
     const phrases3 = ["> Node.js"];
     const phrases4 = ["> Express.js"];
@@ -13,7 +15,7 @@ const CV_3: React.FC = () => {
     const phrases7 = ["> Git"];
     const phrases8 = ["> Github"];
     const phrases9 = ["> Docker"];
-    const phrases10 = ["Conocimientos Moderados"];
+    const phrases10 = [t("skills2")]
     const phrases11 = ["> HTML+CSS"];
     const phrases12 = ["> React"];
     const phrases13 = ["> Python"];

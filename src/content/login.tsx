@@ -91,6 +91,7 @@ const Login: React.FC = () => {
                 right={2}
                 size={'md'}
                 backgroundColor="rgba(0,0,0,0)"
+                fontSize={'22px'}
                 color={'white'}
                 _hover={{ backgroundColor: 'rgba(0,0,0,0)' }}
             >

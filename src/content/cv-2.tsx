@@ -1,4 +1,5 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Text, Stack, Divider, Center, Box, useColorMode } from "@chakra-ui/react";
 import TimeSince from "./refreshDate";
 import {
@@ -14,19 +15,20 @@ import { SelfWritingText } from "./selfWritingText";
 
 const CV_2: React.FC = () => {
     const { colorMode } = useColorMode();
-    const phrases1 = ["Experiencia"];
-    const phrases2 = ["Ministerio de Justicia, Arg."];
+    const { t } = useTranslation();
+    const phrases1 = [t("experience")];
+    const phrases2 = [t("company1")]
     const phrases3 = ["S.P.B., D.T.I."];
-    const phrases4 = ["Puesto:"];
-    const phrases5 = ["Desarrollador especializado en Backend"];
-    const phrases6 = ["Tiempo en el puesto:"];
-    const phrases7 = ["Proyectos"];
-    const phrases8 = ["Lista de proyectos"];
-    const phrases9 = ["Proyecto HTML/CSS (Próximamente)"];
-    const phrases10 = ["Proyecto SPA (Próximamente)"];
-    const phrases11 = ["Proyecto Svelte (Próximamente)"];
-    const phrases12 = ["Proyecto Vue (Próximamente)"];
-    const phrases13 = ["React Lorem (Nuevo!)"];
+    const phrases4 = [t("position")]
+    const phrases5 = [t("position1")]
+    const phrases6 = [t("period")]
+    const phrases7 = [t("projects")]
+    const phrases8 = [t("projectsList")]
+    const phrases9 = [t("projectHTML")]
+    const phrases10 = [t("projectSPA")]
+    const phrases11 = [t("projectSvelte")]
+    const phrases12 = [t("projectVue")]
+    const phrases13 = [t("projectReact")]
     return (
         <Stack
             paddingLeft={"5px"}

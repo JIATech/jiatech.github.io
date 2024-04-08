@@ -1,7 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { LanguageProvider } from "../LanguageContext.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import '../i18n'
 import Home from "./Home.tsx";
 import "./index.css";
 import { MicrofrontendSPA, MicrofrontendSvelte, MicrofrontendVue, HtmlCssExample } from "./routes/root.tsx";
@@ -80,7 +82,9 @@ const theme = extendTheme({
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
         <ChakraProvider theme={theme}>
-            <RouterProvider router={router} />
+            <LanguageProvider>
+                <RouterProvider router={router} />
+            </LanguageProvider>
         </ChakraProvider>
     </React.StrictMode>
 );

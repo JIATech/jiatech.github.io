@@ -16,8 +16,7 @@ const Title: React.FC = () => {
     const phrases1 = [
         "       Juan Ignacio Arnaboldi",
         ];
-    const phrases2 = [
-        "                             Desarrollador Full Stack"];
+    const phrases2 = ["                             Full Stack Developer"];
     return (
         <>
             <Flex

@@ -1,6 +1,7 @@
 import { Grid, GridItem, Box, SimpleGrid, Card, CardHeader } from "@chakra-ui/react";
 import { Heading, Button, CardBody, CardFooter, Image } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
+import { t } from "i18next";
 
 const ProjectsContent = () => {
     const { colorMode } = useColorMode();
@@ -41,7 +42,7 @@ const ProjectsContent = () => {
                         </CardBody>
                         <CardFooter>
                             <Button onClick={() => window.open("https://jiatech.github.io/lorem-react-app.github.io/")}>
-                                Ver más
+                                {t("vermas")}
                             </Button>
                         </CardFooter>
                     </Card>
@@ -58,16 +59,16 @@ const ProjectsContent = () => {
                         shadow={"none"}
                     >
                         <CardHeader>
-                            <Heading>Proyecto 2</Heading>
+                            <Heading>Proyect 2</Heading>
                         </CardHeader>
                         <CardBody>
                             <SimpleGrid columns={2} spacing={10}>
-                                <Box>Descripción</Box>
-                                <Box>Imagen</Box>
+                                <Box>Description</Box>
+                                <Box>Image</Box>
                             </SimpleGrid>
                         </CardBody>
                         <CardFooter>
-                            <Button>Ver más</Button>
+                            <Button>{t("vermas")}</Button>
                         </CardFooter>
                     </Card>
                 </GridItem>
@@ -83,16 +84,16 @@ const ProjectsContent = () => {
                         shadow={"none"}
                     >
                         <CardHeader>
-                            <Heading>Proyecto 3</Heading>
+                            <Heading>Proyect 3</Heading>
                         </CardHeader>
                         <CardBody>
                             <SimpleGrid columns={2} spacing={10}>
-                                <Box>Descripción</Box>
-                                <Box>Imagen</Box>
+                                <Box>Description</Box>
+                                <Box>Image</Box>
                             </SimpleGrid>
                         </CardBody>
                         <CardFooter>
-                            <Button>Ver más</Button>
+                            <Button>{t("vermas")}</Button>
                         </CardFooter>
                     </Card>
                 </GridItem>

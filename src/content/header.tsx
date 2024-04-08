@@ -1,16 +1,20 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
 import { Box, useColorMode, Image } from '@chakra-ui/react';
 import { SelfWritingText } from './selfWritingText';
 import ToggleDarkMode from '../Toggle.tsx';
+import LanguageSelector from './langComponent.tsx';
 
 
 const Header: React.FC = () => {
     const { colorMode } = useColorMode();
+    const { t } = useTranslation();
     const phrases1 = [
-        "No programes para solucionar problemas, programa para crear soluciones."
+        t("header1"),
     ];
     return (
         <>
+            <LanguageSelector />
             <Box
                 as="header"
                 p={4}

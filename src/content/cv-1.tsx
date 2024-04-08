@@ -1,35 +1,35 @@
 import React from "react";
+import { useTranslation } from "react-i18next";
 import { Text, Stack, Divider, Center, Box } from "@chakra-ui/react";
 import TimeSince from "./refreshDate";
 import {
-  Accordion,
-  AccordionItem,
-  AccordionButton,
-  AccordionPanel,
-  AccordionIcon,
-  useColorMode,
-} from '@chakra-ui/react'
+    Accordion,
+    AccordionItem,
+    AccordionButton,
+    AccordionPanel,
+    AccordionIcon,
+    useColorMode,
+} from "@chakra-ui/react";
 import { SelfWritingText } from "./selfWritingText";
 
 const CV_1: React.FC = () => {
     const { colorMode } = useColorMode();
-    const phrases1 = [
-        "Datos",
-    ];
-    const phrases2 = ["Fecha de Nac.: 25.12.1991"];
-    const phrases3 = ["Edad:"];
-    const phrases4 = ["Nacionalidad:"];
-    const phrases5 = ["Argentina"];
-    const phrases6 = ["Cel.:"];
+    const { t } = useTranslation();
+    const phrases1 = [t("data")];
+    const phrases2 = [t("birthdate")];
+    const phrases3 = [t("age")];
+    const phrases4 = [t("nationality")];
+    const phrases5 = [t("argentinian")];
+    const phrases6 = [t("phone")];
     const phrases7 = ["+54 9 221 690 8850"];
     const phrases8 = ["E-mail:"];
     const phrases9 = ["arnaboldi.juan@gmail.com"];
-    const phrases10 = ["Ubicación:"];
+    const phrases10 = [t("location")];
     const phrases11 = ["La Plata, Buenos Aires"];
-    const phrases12 = ["Formación"];
-    const phrases13 = ["2021 - Actualidad"];
-    const phrases14 = ["UES21, sede La Plata"];
-    const phrases15 = ["Licenciatura en Informática (en curso)"];
+    const phrases12 = [t("education")];
+    const phrases13 = [t("present")];
+    const phrases14 = [t("university")];
+    const phrases15 = [t("degree")];
     return (
         <Accordion allowMultiple>
             <Stack
