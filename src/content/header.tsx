@@ -40,7 +40,7 @@ const Header: React.FC = () => {
                     userSelect={"none"}
                     zIndex={0}
                 />
-                <Box zIndex={999} w={{ base: "100%", lg: "50%" }}>
+                <Box zIndex={999} w={{ base: "100%", lg: "50%" }} top={{ base: "0", lg: "0" }} position="absolute">
                 <SelfWritingText
                     phrases={phrases1}
                     erase={true}
