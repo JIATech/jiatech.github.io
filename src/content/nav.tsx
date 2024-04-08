@@ -38,6 +38,7 @@ const OpenModal = () => {
                     color: "white",
                 }}
                 fontWeight={"normal"}
+                boxSize={"auto"}
             >
                 {t("contact")}
             </Button>
@@ -47,14 +48,6 @@ const OpenModal = () => {
                     <ModalHeader>{t("contact")}</ModalHeader>
                     <ModalCloseButton />
                     <ModalBody>
-                        <Box>
-                            <ChakraLink
-                                href="https://linkedin.com/in/juan-arnaboldi"
-                                isExternal
-                            >
-                                LinkedIn Page
-                            </ChakraLink>
-                        </Box>
                         <Box>Wsap: 221-690-8850</Box>
                         <Box>E-mail: arnaboldi.juan@gmail.com</Box>
                         <Box>
@@ -63,6 +56,14 @@ const OpenModal = () => {
                                 isExternal
                             >
                                 GitHub Page
+                            </ChakraLink>
+                        </Box>
+                        <Box>
+                            <ChakraLink
+                                href="https://linkedin.com/in/juan-arnaboldi"
+                                isExternal
+                            >
+                                LinkedIn Page
                             </ChakraLink>
                         </Box>
                     </ModalBody>
@@ -92,7 +93,7 @@ const Nav: React.FC = () => {
                 </ChakraLink>
             </Box>
             <Accordion allowToggle>
-                <AccordionItem border={"none"}>
+                <AccordionItem borderStyle={"double"} borderColor={"white"}>
                     <h2 style={{ margin: "0", padding: "0" }}>
                         <AccordionButton padding={0} margin={0}>
                             <Box textAlign="left" padding={0} margin={0}>
