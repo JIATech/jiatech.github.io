@@ -1,10 +1,11 @@
 import { Grid, GridItem, Box, SimpleGrid, Card, CardHeader } from "@chakra-ui/react";
 import { Heading, Button, CardBody, CardFooter, Image } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
-import { t } from "i18next";
+import { useTranslation } from "react-i18next";
 
 const ProjectsContent = () => {
     const { colorMode } = useColorMode();
+    const { t } = useTranslation();
     return (
         <GridItem
             w="100%"

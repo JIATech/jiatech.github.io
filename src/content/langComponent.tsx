@@ -1,46 +1,34 @@
-import React from "react";
-import { Button, ButtonGroup, Box, useColorMode } from "@chakra-ui/react";
+import React, { useState, useEffect } from "react";
+import { Box, Switch, Text } from "@chakra-ui/react";
 import { useLanguage } from "../../FastRefresh.tsx";
 
 const LanguageSwitcher: React.FC = () => {
-    const { changeLanguage } = useLanguage();
-    const { colorMode } = useColorMode();
+    const { language, changeLanguage } = useLanguage(); // Asumiendo que useLanguage expone el idioma actual
+    const [isChecked, setIsChecked] = useState(language === "es");
 
-    const handleButtonClick = (language: string) => {
-        changeLanguage(language);
-        window.location.reload();
+    useEffect(() => {
+        setIsChecked(language === "es");
+    }, [language]);
+
+    const handleSwitchChange = () => {
+        const newLanguage = isChecked ? "en" : "es";
+        changeLanguage(newLanguage);
+        // No recargar página, `changeLanguage` debería disparar re-renderización necesaria
+        setIsChecked(!isChecked);
     };
 
     return (
-        <Box>
-            <ButtonGroup defaultValue="en">
-                <Button
-                    top={14}
-                    right={7}
-                    position={"fixed"}
-                    colorScheme={"transparent"}
-                    color={colorMode === "dark" ? "white" : "black"}
-                    fontSize={"22px"}
-                    value="en"
-                    onClick={() => handleButtonClick("en")}
-                >
-                    ENG
-                </Button>
-                <Button
-                    top={4}
-                    right={8}
-                    position={"fixed"}
-                    colorScheme={"transparent"}
-                    fontSize={"24px"}
-                    color={colorMode === "dark" ? "white" : "black"}
-                    value="es"
-                    onClick={() => handleButtonClick("es")}
-                >
-                    ESP
-                </Button>
-            </ButtonGroup>
+        <Box position="fixed" top="4" right="8">
+            <Switch
+                size="lg"
+                isChecked={isChecked}
+                onChange={handleSwitchChange}
+            />
+            <Text fontSize="md" mt="2">
+                {isChecked ? "es-ES" : "en-US"}
+            </Text>
         </Box>
     );
-}
+};
 
 export default LanguageSwitcher;

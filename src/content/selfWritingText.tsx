@@ -18,6 +18,12 @@ export const SelfWritingText: React.FC<SelfWritingTextProps> = ({
     const [isWriting, setIsWriting] = useState(true);
 
     useEffect(() => {
+        if (phrases.length > 0) {
+            setText(phrases[0]);
+        }
+    }, [phrases]);
+
+    useEffect(() => {
         let timeoutId: NodeJS.Timeout;
 
         if (isWriting) {
@@ -45,7 +51,7 @@ export const SelfWritingText: React.FC<SelfWritingTextProps> = ({
             clearTimeout(timeoutId);
         };
     }, [text, phrases, erase, cursor, phraseIndex, isWriting]);
-
+    
     if (cursor) {
         return (
             <Box className="self-writing-text">
@@ -57,4 +63,3 @@ export const SelfWritingText: React.FC<SelfWritingTextProps> = ({
         return <Box as="span" className="self-writing-text">{text}</Box>;
     }
 };
-

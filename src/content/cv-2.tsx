@@ -13,22 +13,29 @@ import { Link as ReactRouterLink } from "react-router-dom";
 import { Link as ChakraLink } from "@chakra-ui/react";
 import { SelfWritingText } from "./selfWritingText";
 
-const CV_2: React.FC = () => {
+const CV_2: React.FC<{ language?: string }> = ({ language }) => {
     const { colorMode } = useColorMode();
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const phrases1 = [t("experience")];
-    const phrases2 = [t("company1")]
+    const phrases2 = [t("company1")];
     const phrases3 = ["S.P.B., D.T.I."];
-    const phrases4 = [t("position")]
-    const phrases5 = [t("position1")]
-    const phrases6 = [t("period")]
-    const phrases7 = [t("projects")]
-    const phrases8 = [t("projectsList")]
-    const phrases9 = [t("projectHTML")]
-    const phrases10 = [t("projectSPA")]
-    const phrases11 = [t("projectSvelte")]
-    const phrases12 = [t("projectVue")]
-    const phrases13 = [t("projectReact")]
+    const phrases4 = [t("position")];
+    const phrases5 = [t("position1")];
+    const phrases6 = [t("period")];
+    const phrases7 = [t("projects")];
+    const phrases8 = [t("projectsList")];
+    const phrases9 = [t("projectHTML")];
+    const phrases10 = [t("projectSPA")];
+    const phrases11 = [t("projectSvelte")];
+    const phrases12 = [t("projectVue")];
+    const phrases13 = [t("projectReact")];
+
+    React.useEffect(() => {
+        if (language) {
+            i18n.changeLanguage(language);
+        }
+    }, [language, i18n]);
+
     return (
         <Stack
             paddingLeft={"5px"}
@@ -52,25 +59,29 @@ const CV_2: React.FC = () => {
                         phrases={phrases2}
                         erase={false}
                         cursor={false}
-                    /><br />
+                    />
+                    <br />
                 </Box>
                 <SelfWritingText
                     phrases={phrases3}
                     erase={false}
                     cursor={false}
-                /><br />
+                />
+                <br />
                 <Box as="span" fontWeight="bold">
                     <SelfWritingText
                         phrases={phrases4}
                         erase={false}
                         cursor={false}
                     />
-                </Box><br />
+                </Box>
+                <br />
                 <SelfWritingText
                     phrases={phrases5}
                     erase={false}
                     cursor={false}
-                /><br />
+                />
+                <br />
                 <Box as="span" fontWeight="bold">
                     <SelfWritingText
                         phrases={phrases6}
@@ -118,7 +129,8 @@ const CV_2: React.FC = () => {
                     <AccordionPanel fontSize={"14px"}>
                         <Box>
                             <ChakraLink
-                                href="https://jiatech.github.io/lorem-react-app.github.io/" isExternal
+                                href="https://jiatech.github.io/lorem-react-app.github.io/"
+                                isExternal
                             >
                                 <SelfWritingText
                                     phrases={phrases13}

@@ -3,9 +3,9 @@ import { useTranslation } from "react-i18next";
 import { Text, Stack, Divider, Center, useColorMode, List, ListItem, Box } from "@chakra-ui/react";
 import { SelfWritingText } from "./selfWritingText";
 
-const CV_3: React.FC = () => {
+const CV_3: React.FC<{ language?: string }> = ({ language }) => {
     const { colorMode } = useColorMode();
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const phrases1 = [t("skills")];
     const phrases2 = ["> JavaScript"];
     const phrases3 = ["> Node.js"];
@@ -15,13 +15,20 @@ const CV_3: React.FC = () => {
     const phrases7 = ["> Git"];
     const phrases8 = ["> Github"];
     const phrases9 = ["> Docker"];
-    const phrases10 = [t("skills2")]
+    const phrases10 = [t("skills2")];
     const phrases11 = ["> HTML+CSS"];
     const phrases12 = ["> React"];
     const phrases13 = ["> Python"];
     const phrases14 = ["> PHP"];
     const phrases15 = ["> Vue"];
     const phrases16 = ["> MongoDB"];
+
+    React.useEffect(() => {
+        if (language) {
+            i18n.changeLanguage(language);
+        }
+    }, [language, i18n]);
+
     return (
         <Stack
             paddingLeft={"5px"}

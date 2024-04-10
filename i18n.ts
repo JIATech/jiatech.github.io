@@ -15,6 +15,10 @@ i18n.use(HttpBackend)
         backend: {
             loadPath: "/locales/{{lng}}/{{ns}}.json",
         },
+        detection: {
+            order: ["cookie", "localStorage", "navigator", "htmlTag", "path", "subdomain"],
+            caches: ["localStorage", "cookie"],
+        },
     });
 
 export default i18n;

@@ -1,3 +1,5 @@
+import { I18nextProvider } from "react-i18next";
+import i18n from "../i18n";
 import { Grid, GridItem, SlideFade, useColorMode, Box } from "@chakra-ui/react";
 import Title from "./content/title";
 import Header from "./content/header";
@@ -101,7 +103,9 @@ const Home = () => {
                                         : "rgba(0,0,0,0.7)"
                                 }
                             >
-                                {outlet}
+                                <I18nextProvider i18n={i18n}>
+                                    {outlet}
+                                </I18nextProvider>
                             </GridItem>
                             <GridItem
                                 w="100%"

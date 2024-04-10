@@ -12,9 +12,9 @@ import {
 } from "@chakra-ui/react";
 import { SelfWritingText } from "./selfWritingText";
 
-const CV_1: React.FC = () => {
+const CV_1: React.FC<{ language?: string }> = ({ language }) => {
     const { colorMode } = useColorMode();
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation();
     const phrases1 = [t("data")];
     const phrases2 = [t("birthdate")];
     const phrases3 = [t("age")];
@@ -30,6 +30,13 @@ const CV_1: React.FC = () => {
     const phrases13 = [t("present")];
     const phrases14 = [t("university")];
     const phrases15 = [t("degree")];
+
+    React.useEffect(() => {
+        if (language) {
+            i18n.changeLanguage(language);
+        }
+    }, [language, i18n]);
+    
     return (
         <Accordion allowMultiple>
             <Stack
