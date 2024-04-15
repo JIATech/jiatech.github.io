@@ -22,6 +22,7 @@ import {
     Button,
     useDisclosure,
 } from "@chakra-ui/react";
+import { CopyIcon } from "@chakra-ui/icons";
 
 const OpenModal = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -49,7 +50,20 @@ const OpenModal = () => {
                     <ModalCloseButton />
                     <ModalBody>
                         <Box>Wsap: 221-690-8850</Box>
-                        <Box>E-mail: arnaboldi.juan@gmail.com</Box>
+                        <Box>
+                            E-mail: arnaboldi.juan@gmail.com{" "}
+                            <Button
+                                onClick={() => {
+                                    navigator.clipboard.writeText(
+                                        "arnaboldi.juan@gmail.com"
+                                    );
+                                }}
+                                leftIcon={<CopyIcon />}
+                                size={"xs"}
+                                bgColor={"white"}
+                                color={"black"}
+                            ></Button>
+                        </Box>
                         <Box>
                             <ChakraLink
                                 href="https://github.com/JIATech"

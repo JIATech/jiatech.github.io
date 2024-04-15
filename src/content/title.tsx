@@ -30,6 +30,7 @@ const Title: React.FC = () => {
                     onClick={onOpen}
                     _hover={{ cursor: "pointer" }}
                     filter={"grayscale(100%)"}
+                    border={colorMode === "dark" ? "2px solid white" : "2px solid black"}
                 />
                 <Modal isOpen={isOpen} onClose={onClose} isCentered>
                     <ModalOverlay bg="transparent" />

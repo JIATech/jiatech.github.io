@@ -21,9 +21,9 @@ export default function ToggleDarkMode() {
         <Button
             title="Toggle dark mode"
             onPointerDown={handleClick}
-            position="absolute"
+            position="fixed"
             top={2}
-            right={2}
+            left={2}
             style={{
                 opacity: opacity,
                 transition: "opacity 100ms ease-in-out",

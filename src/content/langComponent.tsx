@@ -3,8 +3,8 @@ import { Box, Switch, Text } from "@chakra-ui/react";
 import { useLanguage } from "../../FastRefresh.tsx";
 
 const LanguageSwitcher: React.FC = () => {
-    const { language, changeLanguage } = useLanguage(); // Asumiendo que useLanguage expone el idioma actual
-    const [isChecked, setIsChecked] = useState(language === "es");
+    const { language, changeLanguage } = useLanguage();
+    const [isChecked, setIsChecked] = useState(language === "en");
 
     useEffect(() => {
         setIsChecked(language === "es");
@@ -13,7 +13,6 @@ const LanguageSwitcher: React.FC = () => {
     const handleSwitchChange = () => {
         const newLanguage = isChecked ? "en" : "es";
         changeLanguage(newLanguage);
-        // No recargar página, `changeLanguage` debería disparar re-renderización necesaria
         setIsChecked(!isChecked);
     };
 
@@ -23,8 +22,9 @@ const LanguageSwitcher: React.FC = () => {
                 size="lg"
                 isChecked={isChecked}
                 onChange={handleSwitchChange}
+                colorScheme="gray"
             />
-            <Text fontSize="md" mt="2">
+            <Text fontSize="sm" mt="2" bg={isChecked ? "grey" : "grey"} color="white" p="2" borderRadius="md" size={"xs"} onClick={handleSwitchChange} _hover={{ cursor: "pointer" }}>
                 {isChecked ? "es-ES" : "en-US"}
             </Text>
         </Box>

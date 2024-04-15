@@ -14,6 +14,8 @@ import CV_3 from "./cv-3";
 import { Grid, GridItem } from "@chakra-ui/react";
 import { useColorMode } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
+import { CopyIcon } from "@chakra-ui/icons";
+import { Button } from "@chakra-ui/react";
 
 const Main = () => {
     const { colorMode } = useColorMode();
@@ -151,7 +153,18 @@ const Main = () => {
                                         phrases={phrases9}
                                         erase={false}
                                         cursor={false}
-                                    />
+                                    />{" "}
+                                    <Button
+                                        onClick={() => {
+                                            navigator.clipboard.writeText(
+                                                "arnaboldi.juan@gmail.com"
+                                            );
+                                        }}
+                                        leftIcon={<CopyIcon />}
+                                        size={"xs"}
+                                        bgColor={"white"}
+                                        color={"black"}
+                                    ></Button>
                                 </Text>
                                 <Text fontSize={"14px"}>
                                     <Box as="span" fontWeight="bold">
