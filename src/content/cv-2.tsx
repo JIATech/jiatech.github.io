@@ -98,6 +98,7 @@ const CV_2: React.FC<{ language?: string }> = ({ language }) => {
                 <ChakraLink
                     as={ReactRouterLink}
                     fontWeight="bold"
+                    fontSize={"16px"}
                     to={"/projects"}
                 >
                     <SelfWritingText
