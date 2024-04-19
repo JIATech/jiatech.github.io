@@ -32,7 +32,7 @@ const ProjectsContent = () => {
                     >
                         <CardHeader>
                             <Heading as="h2" size="lg" fontFamily={"monospace"}
-                            >React Lorem</Heading>
+                            >React Front Page</Heading>
                         </CardHeader>
                         <CardBody>
                             <SimpleGrid columns={2} spacing={10}>

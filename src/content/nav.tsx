@@ -23,6 +23,7 @@ import {
     useDisclosure,
 } from "@chakra-ui/react";
 import { CopyIcon } from "@chakra-ui/icons";
+import MountImg from "../featured/mountImg";
 
 const OpenModal = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
@@ -92,6 +93,44 @@ const OpenModal = () => {
     );
 };
 
+const AnotherModal = () => {
+    const { isOpen, onOpen, onClose } = useDisclosure();
+    const { t } = useTranslation();
+
+    return (
+        <>
+            <Button
+                onClick={onOpen}
+                style={{
+                    margin: "0",
+                    padding: "0",
+                    backgroundColor: "rgba(0,0,0,0)",
+                    color: "white",
+                }}
+                fontWeight={"normal"}
+                boxSize={"auto"}
+            >
+                MountImg
+            </Button>
+            <Modal isOpen={isOpen} onClose={onClose} isCentered>
+                <ModalOverlay />
+                <ModalContent backgroundColor="rgba(0,0,0,0.9)" color="white">
+                    <ModalHeader>MountImg</ModalHeader>
+                    <ModalCloseButton />
+                    <ModalBody>
+                        <MountImg />
+                    </ModalBody>
+                    <ModalFooter>
+                        <Button colorScheme="blue" mr={3} onClick={onClose}>
+                            {t("close")}
+                        </Button>
+                    </ModalFooter>
+                </ModalContent>
+            </Modal>
+        </>
+    );
+}
+
 const Nav: React.FC = () => {
     const { colorMode } = useColorMode();
     const { t } = useTranslation();
@@ -145,7 +184,12 @@ const Nav: React.FC = () => {
                     </AccordionPanel>
                 </AccordionItem>
             </Accordion>
-            {OpenModal()}
+            <Box>
+                {OpenModal()}
+            </Box>
+            <Box borderTop={"1px"} borderColor={"white"}>
+                {AnotherModal()}
+            </Box>
         </Box>
     );
 };

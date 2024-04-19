@@ -22,6 +22,7 @@ const Title: React.FC = () => {
             <Flex
                 align="center"
                 color={colorMode === "dark" ? "white" : "white"}
+                padding={{ base: 0, md: 1, lg: 1, xl: 1 }}
             >
                 <Avatar
                     name="Juan Arnaboldi"

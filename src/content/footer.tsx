@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
             userSelect={"none"}
         >
             <Box maxW="container.lg" mx="auto" textAlign="center">
-                <Text>&copy; 2024 JIATech. All rights reserved.</Text>
+                <Text>&copy; 2024 JIATech.</Text>
                 <Flex justifyContent="center" mt={2}>
                     <Link
                         href="https://github.com/JIATech"
