@@ -30,7 +30,7 @@ export default function ToggleDarkMode() {
             }}
             zIndex="tooltip"
         >
-            {colorMode === "light" ? <MoonIcon /> : <SunIcon />}
+            {colorMode === "dark" ? <MoonIcon /> : <SunIcon />}
         </Button>
     );
 }

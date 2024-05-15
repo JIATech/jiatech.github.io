@@ -22,6 +22,7 @@ const CV_3: React.FC<{ language?: string }> = ({ language }) => {
     const phrases14 = ["> PHP"];
     const phrases15 = ["> Vue"];
     const phrases16 = ["> MongoDB"];
+    const phrases17 = ["> Svelte"];
 
     React.useEffect(() => {
         if (language) {
@@ -181,6 +182,15 @@ const CV_3: React.FC<{ language?: string }> = ({ language }) => {
                     <Box as="span" fontStyle="italic">
                         <SelfWritingText
                             phrases={phrases16}
+                            erase={false}
+                            cursor={false}
+                        />
+                    </Box>
+                </ListItem>
+                <ListItem>
+                    <Box as="span" fontStyle="italic">
+                        <SelfWritingText
+                            phrases={phrases17}
                             erase={false}
                             cursor={false}
                         />
