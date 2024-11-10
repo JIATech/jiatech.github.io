@@ -13,8 +13,8 @@
     "experience": "Experiencia",
     "company1": "Ministerio de Justicia, Arg.",
     "position": "Puesto:",
-    "position1": "Desarrollador especializado en Backend",
-    "period": "Tiempo en el puesto:",
+    "position1": "Desarrollador de Sistemas (Full Stack)",
+    "currentPosition": "Tiempo en el Puesto Actual:",
     "projects": "Proyectos",
     "projectsList": "Lista de Proyectos",
     "projectHTML": "Proyecto HTML/CSS (Próximamente)",
@@ -30,5 +30,13 @@
     "vermas": "Ver más",
     "dias": "días",
     "meses": "meses",
-    "anos": "años"
+    "anos": "años",
+    "institutionTenure": "Antigüedad en la Institución:",
+    "description1": "• Desarrollo Backend: Node.js, PostgreSQL y RESTful APIs",
+    "description2": "• JavaScript y Node.js: Aplicación en Frontend y Backend",
+    "description3": "• Bases de Datos: PostgreSQL y MySQL",
+    "description4": "• Herramientas Modernas de Desarrollo: Astro, Supabase, Docker y Redis para ambientes escalables y de alta disponibilidad",
+    "description5": "• Control de Versiones: Git y Github",
+    "description6": "• Desarrollo Frontend: HTML+CSS, TailwindCSS, React y Next.js",
+    "description7": "• Adaptabilidad y Aprendizaje Continuo"
 }
