@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-interface LanguageContextProps {
+export interface LanguageContextProps {
     language: string;
     changeLanguage: (language: string) => void;
 }
