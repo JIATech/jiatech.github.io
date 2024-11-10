@@ -7,6 +7,8 @@ export default defineConfig({
   plugins: [
     react(), // Habilita soporte para React con fast refresh
     svgrPlugin(), // Habilita la importación de archivos SVG como componentes React
-    // Aquí puedes agregar más plugins según necesites
   ],
+  server: {
+    port: 3000,
+  }
 });

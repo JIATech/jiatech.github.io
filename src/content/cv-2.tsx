@@ -1,6 +1,13 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Text, Stack, Divider, Center, Box, useColorMode } from "@chakra-ui/react";
+import {
+    Text,
+    Stack,
+    Divider,
+    Center,
+    Box,
+    useColorMode,
+} from "@chakra-ui/react";
 import TimeSince from "./refreshDate";
 import {
     Accordion,
@@ -21,7 +28,7 @@ const CV_2: React.FC<{ language?: string }> = ({ language }) => {
     const phrases3 = ["S.P.B., D.T.I."];
     const phrases4 = [t("position")];
     const phrases5 = [t("position1")];
-    const phrases6 = [t("period")];
+    const phrases6 = [t("currentPosition")];
     const phrases7 = [t("projects")];
     const phrases8 = [t("projectsList")];
     const phrases9 = [t("projectHTML")];
@@ -29,6 +36,7 @@ const CV_2: React.FC<{ language?: string }> = ({ language }) => {
     const phrases11 = [t("projectSvelte")];
     const phrases12 = [t("projectVue")];
     const phrases13 = [t("projectReact")];
+    const phrase14 = [t("institutionTenure")];
 
     React.useEffect(() => {
         if (language) {
@@ -93,6 +101,19 @@ const CV_2: React.FC<{ language?: string }> = ({ language }) => {
             <Text fontSize={"14px"} paddingTop={"0px"} marginTop={"0px"}>
                 <TimeSince startDate={new Date(2023, 10, 27)} />
             </Text>
+            <Text fontSize={"14px"} paddingTop={"0px"} marginTop={"0px"}>
+                <Box as="span" fontWeight="bold">
+                    <SelfWritingText
+                        phrases={phrase14} // Employment Period
+                        erase={false}
+                        cursor={false}
+                    />
+                </Box>
+            </Text>
+            <Text fontSize={"14px"} paddingBottom={"0px"} marginBottom={"0px"}>
+                <TimeSince startDate={new Date(2011, 1, 28)} />
+            </Text>
+
             <Center position="relative" paddingTop={"20px"} paddingLeft={"0px"}>
                 <Divider borderWidth="1px" my="4" />
                 <ChakraLink

@@ -1,40 +1,54 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import { LanguageProvider } from "../LanguageContext.tsx";
+import { LanguageProvider } from "../LanguageProvider.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
-import '../i18n'
+import "../i18n";
 import Home from "./Home.tsx";
 import "./index.css";
-import { MicrofrontendSPA, MicrofrontendSvelte, MicrofrontendVue, HtmlCssExample } from "./routes/root.tsx";
+import {
+    MicrofrontendSPA,
+    MicrofrontendSvelte,
+    MicrofrontendVue,
+    HtmlCssExample,
+} from "./routes/root.tsx";
 import ProjectsContent from "./content/projects.tsx";
 import Main from "./content/mainContent.tsx";
 
-const router = createBrowserRouter([{ 
-    path: "/", 
-    element: <Home />,
-    children: [
-        { path: "/", element: <Main /> },
-        { path: "/projects", element: <ProjectsContent /> },
-    ]
-}, {
-    path: "/spa",
-    element: <MicrofrontendSPA />
-}, {
-    path: "/svelte",
-    element: <MicrofrontendSvelte />
-}, {
-    path: "/vue",
-    element: <MicrofrontendVue />
-}, {
-    path: "/htmlcss",
-    element: <HtmlCssExample />
-}
+const router = createBrowserRouter([
+    {
+        path: "/",
+        element: <Home />,
+        children: [
+            { path: "/", element: <Main /> },
+            { path: "/projects", element: <ProjectsContent /> },
+        ],
+    },
+    {
+        path: "/spa",
+        element: <MicrofrontendSPA />,
+    },
+    {
+        path: "/svelte",
+        element: <MicrofrontendSvelte />,
+    },
+    {
+        path: "/vue",
+        element: <MicrofrontendVue />,
+    },
+    {
+        path: "/htmlcss",
+        element: <HtmlCssExample />,
+    },
 ]);
 
 export default router;
 
 const theme = extendTheme({
+    config: {
+        initialColorMode: "dark",
+        useSystemColorMode: true,
+    },
     breakpoints: {
         sm: "30em",
         md: "48em",

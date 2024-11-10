@@ -13,8 +13,8 @@
     "experience": "Experience",
     "company1": "Ministry of Justice, Arg.",
     "position": "Position:",
-    "position1": "Backend Developer",
-    "period": "Period:",
+    "position1": "Full Stack Developer",
+    "currentPosition": "Current Position Time:",
     "projects": "Projects",
     "projectsList": "Projects List",
     "projectHTML": "HTML/CSS Project (Soon)",
@@ -30,5 +30,13 @@
     "vermas": "See more",
     "dias": "days",
     "meses": "months",
-    "anos": "years"
+    "anos": "years",
+    "institutionTenure": "Institution Tenure Time:",
+    "description1": "• Backend Development: Node.js, PostgreSQL and RESTful APIs",
+    "description2": "• JavaScript and Node.js: Application in Frontend and Backend",
+    "description3": "• Databases: PostgreSQL and MySQL",
+    "description4": "• Modern Development Tools: Astro, Supabase, Docker and Redis for scalable and highly available environments",
+    "description5": "• Version Control: Git and Github",
+    "description6": "• Frontend Development: HTML+CSS, TailwindCSS, React and Next.js",
+    "description7": "• Adaptability and Continuous Learning"
 }

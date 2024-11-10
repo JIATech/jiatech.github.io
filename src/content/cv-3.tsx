@@ -1,28 +1,34 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import { Text, Stack, Divider, Center, useColorMode, List, ListItem, Box } from "@chakra-ui/react";
+import {
+    Text,
+    Stack,
+    Divider,
+    Center,
+    useColorMode,
+    List,
+    ListItem,
+    Box,
+} from "@chakra-ui/react";
 import { SelfWritingText } from "./selfWritingText";
 
 const CV_3: React.FC<{ language?: string }> = ({ language }) => {
     const { colorMode } = useColorMode();
     const { t, i18n } = useTranslation();
     const phrases1 = [t("skills")];
-    const phrases2 = ["> JavaScript"];
-    const phrases3 = ["> Node.js"];
-    const phrases4 = ["> Express.js"];
-    const phrases5 = ["> PostgreSQL"];
-    const phrases6 = ["> MySQL"];
-    const phrases7 = ["> Git"];
-    const phrases8 = ["> Github"];
-    const phrases9 = ["> Docker"];
-    const phrases10 = [t("skills2")];
-    const phrases11 = ["> HTML+CSS"];
-    const phrases12 = ["> React"];
-    const phrases13 = ["> Python"];
-    const phrases14 = ["> PHP"];
-    const phrases15 = ["> Vue"];
-    const phrases16 = ["> MongoDB"];
-    const phrases17 = ["> Svelte"];
+    const phrases2 = [t("description1")];
+    const phrases3 = [t("description2")];
+    const phrases4 = [t("description3")];
+    const phrases5 = [t("description4")];
+    const phrases6 = [t("description5")];
+    const phrases7 = [t("description6")];
+    const phrases8 = [t("description7")];
+    const phrases9 = [t("skills2")];
+    const phrases10 = ["• Python"];
+    const phrases11 = ["• PHP"];
+    const phrases12 = ["• Vue"];
+    const phrases13 = ["• MongoDB"];
+    const phrases14 = ["• Svelte"];
 
     React.useEffect(() => {
         if (language) {
@@ -111,21 +117,12 @@ const CV_3: React.FC<{ language?: string }> = ({ language }) => {
                         />
                     </Box>
                 </ListItem>
-                <ListItem>
-                    <Box as="span" fontStyle="italic">
-                        <SelfWritingText
-                            phrases={phrases9}
-                            erase={false}
-                            cursor={false}
-                        />
-                    </Box>
-                </ListItem>
             </List>
             <Divider borderWidth="1px" w={"99%"} />
             <Center position="relative" paddingTop={"0px"}>
                 <Text fontWeight={"bold"} fontSize={"16px"} align="center">
                     <SelfWritingText
-                        phrases={phrases10}
+                        phrases={phrases9}
                         erase={false}
                         cursor={false}
                     />
@@ -133,6 +130,15 @@ const CV_3: React.FC<{ language?: string }> = ({ language }) => {
             </Center>
             <Divider borderWidth="1px" w={"99%"} />
             <List fontSize={"14px"}>
+                <ListItem>
+                    <Box as="span" fontStyle="italic">
+                        <SelfWritingText
+                            phrases={phrases10}
+                            erase={false}
+                            cursor={false}
+                        />
+                    </Box>
+                </ListItem>
                 <ListItem>
                     <Box as="span" fontStyle="italic">
                         <SelfWritingText
@@ -164,33 +170,6 @@ const CV_3: React.FC<{ language?: string }> = ({ language }) => {
                     <Box as="span" fontStyle="italic">
                         <SelfWritingText
                             phrases={phrases14}
-                            erase={false}
-                            cursor={false}
-                        />
-                    </Box>
-                </ListItem>
-                <ListItem>
-                    <Box as="span" fontStyle="italic">
-                        <SelfWritingText
-                            phrases={phrases15}
-                            erase={false}
-                            cursor={false}
-                        />
-                    </Box>
-                </ListItem>
-                <ListItem>
-                    <Box as="span" fontStyle="italic">
-                        <SelfWritingText
-                            phrases={phrases16}
-                            erase={false}
-                            cursor={false}
-                        />
-                    </Box>
-                </ListItem>
-                <ListItem>
-                    <Box as="span" fontStyle="italic">
-                        <SelfWritingText
-                            phrases={phrases17}
                             erase={false}
                             cursor={false}
                         />

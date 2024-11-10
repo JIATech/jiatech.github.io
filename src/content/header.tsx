@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
 // import { useTranslation } from 'react-i18next';
-import { Box, useColorMode, Image } from '@chakra-ui/react';
+import { Box, useColorMode, Image } from "@chakra-ui/react";
 // import { SelfWritingText } from './selfWritingText';
-import ToggleDarkMode from '../Toggle.tsx';
-import LanguageSelector from './langComponent.tsx';
-import Contador from './contador.tsx';
-
+import ToggleDarkMode from "../Toggle.tsx";
+import LanguageSelector from "./langComponent.tsx";
 
 const Header: React.FC = () => {
     const { colorMode } = useColorMode();
@@ -16,7 +14,6 @@ const Header: React.FC = () => {
     return (
         <>
             <LanguageSelector />
-            <Contador />
             <Box
                 as="header"
                 p={4}
