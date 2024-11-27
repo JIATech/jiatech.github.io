@@ -99,7 +99,7 @@ const CV_2: React.FC<{ language?: string }> = ({ language }) => {
                 </Box>
             </Text>
             <Text fontSize={"14px"} paddingTop={"0px"} marginTop={"0px"}>
-                <TimeSince startDate={new Date(2023, 10, 27)} />
+                <TimeSince startDate={new Date(2023, 9, 27)} />
             </Text>
             <Text fontSize={"14px"} paddingTop={"0px"} marginTop={"0px"}>
                 <Box as="span" fontWeight="bold">
@@ -111,7 +111,7 @@ const CV_2: React.FC<{ language?: string }> = ({ language }) => {
                 </Box>
             </Text>
             <Text fontSize={"14px"} paddingBottom={"0px"} marginBottom={"0px"}>
-                <TimeSince startDate={new Date(2011, 1, 28)} />
+                <TimeSince startDate={new Date(2011, 0, 28)} />
             </Text>
 
             <Center position="relative" paddingTop={"20px"} paddingLeft={"0px"}>

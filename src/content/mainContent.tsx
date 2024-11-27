@@ -107,7 +107,7 @@ const Main = () => {
                                         <Text fontSize={"14px"}>
                                             <TimeSince
                                                 startDate={
-                                                    new Date(1991, 12, 25)
+                                                    new Date(1991, 11, 25)
                                                 }
                                             />
                                         </Text>

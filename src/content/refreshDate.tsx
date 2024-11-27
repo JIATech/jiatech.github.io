@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Box } from "@chakra-ui/react";
-import { differenceInYears, differenceInMonths, differenceInDays, addYears, addMonths } from "date-fns";
+import { intervalToDuration } from "date-fns";
 
 interface TimeSinceProps {
     startDate: Date;
@@ -16,13 +16,11 @@ const TimeSince: React.FC<TimeSinceProps> = ({ startDate }) => {
     useEffect(() => {
         const updateTime = () => {
             const now = new Date();
-            const years = differenceInYears(now, startDate);
-            const monthsAfterYears = differenceInMonths(now, addYears(startDate, years));
-            const daysAfterMonths = differenceInDays(now, addMonths(addYears(startDate, years), monthsAfterYears));
+            const duration = intervalToDuration({ start: startDate, end: now });
 
-            setYears(years);
-            setMonths(monthsAfterYears);
-            setDays(daysAfterMonths);
+            setYears(duration.years || 0);
+            setMonths(duration.months || 0);
+            setDays(duration.days || 0);
         };
         updateTime();
         const interval = setInterval(updateTime, 60000);
@@ -31,9 +29,11 @@ const TimeSince: React.FC<TimeSinceProps> = ({ startDate }) => {
 
     if (years === 0) {
         if (months === 0) {
-            return <Box as="span" style={
-                { fontStyle: "italic" }
-            }>{days} {t("dias")}</Box>;
+            return (
+                <Box as="span" style={{ fontStyle: "italic" }}>
+                    {days} {t("dias")}
+                </Box>
+            );
         }
         return (
             <Box as="span" style={{ fontStyle: "italic" }}>
@@ -47,6 +47,6 @@ const TimeSince: React.FC<TimeSinceProps> = ({ startDate }) => {
             </Box>
         );
     }
-}
+};
 
 export default TimeSince;
