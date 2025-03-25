@@ -1,8 +1,8 @@
 {
     "name": "jiatech.github.io",
     "private": true,
-    "version": "0.0.1",
-    "homepage": "https://jiatech.github.io/jiatech.github.io",
+    "version": "0.0.2",
+    "homepage": "https://portfolio.jiacode.dev",
     "type": "module",
     "scripts": {
         "dev": "vite",
