@@ -119,31 +119,7 @@ const Nav: React.FC = () => {
                     <AccordionPanel pb={4} fontSize={"14px"}>
                         <Box>
                             <ChakraLink as={ReactRouterLink} to="/projects">
-                                {t("projectReact")}
-                            </ChakraLink>
-                        </Box>
-                        <Box>
-                            <ChakraLink as={ReactRouterLink} to="#">
-                                {t("projectHTML")}
-                            </ChakraLink>
-                        </Box>
-                        <Box>
-                            <ChakraLink as={ReactRouterLink} to="#">
-                                {t("projectSPA")}
-                            </ChakraLink>
-                        </Box>
-                        <Box>
-                            <ChakraLink
-                                as={ReactRouterLink}
-                                to="https://gatosgram.jiacode.dev/"
-                                isExternal
-                            >
-                                {t("projectSvelte")}
-                            </ChakraLink>
-                        </Box>
-                        <Box>
-                            <ChakraLink as={ReactRouterLink} to="#">
-                                {t("projectVue")}
+                                {t("projectsList")}
                             </ChakraLink>
                         </Box>
                     </AccordionPanel>

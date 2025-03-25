@@ -31,11 +31,6 @@ const CV_2: React.FC<{ language?: string }> = ({ language }) => {
     const phrases6 = [t("currentPosition")];
     const phrases7 = [t("projects")];
     const phrases8 = [t("projectsList")];
-    const phrases9 = [t("projectHTML")];
-    const phrases10 = [t("projectSPA")];
-    const phrases11 = [t("projectSvelte")];
-    const phrases12 = [t("projectVue")];
-    const phrases13 = [t("projectReact")];
     const phrase14 = [t("institutionTenure")];
 
     React.useEffect(() => {
@@ -149,54 +144,9 @@ const CV_2: React.FC<{ language?: string }> = ({ language }) => {
                         <AccordionIcon />
                     </AccordionButton>
                     <AccordionPanel fontSize={"14px"}>
-                        <Box>
-                            <ChakraLink
-                                href="https://jiatech.github.io/lorem-react-app.github.io/"
-                                isExternal
-                            >
-                                <SelfWritingText
-                                    phrases={phrases13}
-                                    erase={false}
-                                    cursor={false}
-                                />
-                            </ChakraLink>
-                        </Box>
-                        <Box>
-                            <ChakraLink as={ReactRouterLink} to="#">
-                                <SelfWritingText
-                                    phrases={phrases9}
-                                    erase={false}
-                                    cursor={false}
-                                />
-                            </ChakraLink>
-                        </Box>
-                        <Box>
-                            <ChakraLink as={ReactRouterLink} to="#">
-                                <SelfWritingText
-                                    phrases={phrases10}
-                                    erase={false}
-                                    cursor={false}
-                                />
-                            </ChakraLink>
-                        </Box>
-                        <Box>
-                            <ChakraLink as={ReactRouterLink} to="#">
-                                <SelfWritingText
-                                    phrases={phrases11}
-                                    erase={false}
-                                    cursor={false}
-                                />
-                            </ChakraLink>
-                        </Box>
-                        <Box>
-                            <ChakraLink as={ReactRouterLink} to="#">
-                                <SelfWritingText
-                                    phrases={phrases12}
-                                    erase={false}
-                                    cursor={false}
-                                />
-                            </ChakraLink>
-                        </Box>
+                        <Text>
+                            {t("projectsDescription")}
+                        </Text>
                     </AccordionPanel>
                 </AccordionItem>
             </Accordion>
