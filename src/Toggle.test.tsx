@@ -1,5 +1,6 @@
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Toggle from './Toggle';
+import * as chakraUI from '@chakra-ui/react';
 
 // Import desde archivo de configuración con las declaraciones
 import '../jest.setup';
@@ -12,6 +13,7 @@ jest.mock('@chakra-ui/react', () => {
     useColorMode: () => ({
       colorMode: 'light',
       toggleColorMode: jest.fn(),
+      setColorMode: jest.fn(),
     }),
   };
 });
@@ -26,9 +28,10 @@ describe('Toggle Component', () => {
   it('calls toggleColorMode when pointer down', async () => {
     // Configurar mock con jest.fn para poder rastrear las llamadas
     const mockToggleColorMode = jest.fn();
-    jest.spyOn(require('@chakra-ui/react'), 'useColorMode').mockImplementation(() => ({
+    jest.spyOn(chakraUI, 'useColorMode').mockImplementation(() => ({
       colorMode: 'light',
       toggleColorMode: mockToggleColorMode,
+      setColorMode: jest.fn(),
     }));
 
     // Configurar mock para setTimeout

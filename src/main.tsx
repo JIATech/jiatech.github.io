@@ -108,10 +108,8 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
 );
 
 // Reportar métricas de rendimiento web
-reportWebVitals(metrics => {
+reportWebVitals(() => {
     // Aquí puedes enviar los datos a un servicio de análisis
-    console.log(metrics);
-    
     // Si tienes Google Analytics configurado, puedes enviar allí las métricas:
     // window.gtag('event', metrics.name, {
     //   value: Math.round(metrics.value * 1000),

@@ -29,8 +29,7 @@ const Login: React.FC = () => {
 
     const handleLogin = () => {
         // Perform login logic here
-        console.log('Logging in...');
-
+        
         // Make a POST request to the login endpoint
         fetch('http://172.16.2.107:3022/api/v1/login', {
             method: 'POST',
@@ -42,12 +41,11 @@ const Login: React.FC = () => {
             .then((response) => {
                 if (response.ok) {
                     // Login successful
-                    console.log('Login successful', response);
                     // Redirect to the dashboard
                     // window.location.href = '/dashboard';
                     // get the token
-                    response.json().then((data) => {
-                        console.log(data);
+                    response.json().then((_data) => {
+                        // Procesar datos del token si es necesario
                     }).then(() => {
                         // Alert login successful with chakra ui
                         toast({
@@ -59,7 +57,6 @@ const Login: React.FC = () => {
                     });
                 } else {
                     // Login failed
-                    console.log('Login failed', response);
                     // Alert login failed with chakra ui
                     toast({
                         title: 'Login failed',
@@ -69,8 +66,7 @@ const Login: React.FC = () => {
                     });
                 }
             })
-            .catch((error) => {
-                console.error('Error logging in:', error);
+            .catch((_error) => {
                 // Alert error with chakra ui
                 toast({
                     title: 'Server Error',
