@@ -3,6 +3,7 @@ import ReactDOM from "react-dom/client";
 import { LanguageProvider } from "../LanguageProvider.tsx";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import { HelmetProvider } from "react-helmet-async";
 import "../i18n";
 import Home from "./Home.tsx";
 import "./index.css";
@@ -14,6 +15,7 @@ import {
 } from "./routes/root.tsx";
 import ProjectsContent from "./content/projects.tsx";
 import Main from "./content/mainContent.tsx";
+import reportWebVitals from "./utils/reportWebVitals";
 
 const router = createBrowserRouter([
     {
@@ -95,10 +97,26 @@ const theme = extendTheme({
 
 ReactDOM.createRoot(document.getElementById("root")!).render(
     <React.StrictMode>
-        <ChakraProvider theme={theme}>
-            <LanguageProvider>
-                <RouterProvider router={router} />
-            </LanguageProvider>
-        </ChakraProvider>
+        <HelmetProvider>
+            <ChakraProvider theme={theme}>
+                <LanguageProvider>
+                    <RouterProvider router={router} />
+                </LanguageProvider>
+            </ChakraProvider>
+        </HelmetProvider>
     </React.StrictMode>
 );
+
+// Reportar métricas de rendimiento web
+reportWebVitals(metrics => {
+    // Aquí puedes enviar los datos a un servicio de análisis
+    console.log(metrics);
+    
+    // Si tienes Google Analytics configurado, puedes enviar allí las métricas:
+    // window.gtag('event', metrics.name, {
+    //   value: Math.round(metrics.value * 1000),
+    //   metric_id: metrics.id,
+    //   metric_value: metrics.value,
+    //   metric_delta: metrics.delta,
+    // });
+});

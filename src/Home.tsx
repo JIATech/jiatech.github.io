@@ -6,14 +6,36 @@ import Header from "./content/header";
 import Nav from "./content/nav";
 import Footer from "./content/footer";
 import VideoBackground from "./content/backgroundComponent";
-import { useOutlet } from "react-router-dom";
+import { useOutlet, useLocation } from "react-router-dom";
+import SEO from "./components/SEO";
 
 const Home = () => {
     const { colorMode } = useColorMode();
     const outlet = useOutlet();
+    const location = useLocation();
+    
+    // Generar URL canónica basada en la ruta actual
+    const currentPath = location.pathname === "/" ? "" : location.pathname;
+    const canonicalUrl = `https://portfolio.jiacode.dev${currentPath}`;
+    
+    // Determinar título y descripción basados en la ruta
+    let pageTitle = "Inicio";
+    let pageDescription = "Portfolio de desarrollo y soluciones tecnológicas";
+    
+    if (location.pathname === "/projects") {
+        pageTitle = "Proyectos";
+        pageDescription = "Explorar los proyectos y trabajos realizados";
+    }
+    
     return (
         <SlideFade in={true} delay={0.5}>
             <>
+                <SEO 
+                    title={pageTitle} 
+                    description={pageDescription} 
+                    url={canonicalUrl}
+                    keywords="desarrollo web, portfolio, proyectos, tecnología"
+                />
                 <VideoBackground>
                     <Box overflowX="auto">
                         <Grid
