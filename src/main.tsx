@@ -14,7 +14,8 @@ import {
     HtmlCssExample,
 } from "./routes/root.tsx";
 import ProjectsContent from "./content/projects.tsx";
-import Main from "./content/mainContent.tsx";
+import Introduction from "./components/HomePage/Introduction.tsx";
+import Resume from "./pages/Resume.tsx";
 import reportWebVitals from "./utils/reportWebVitals";
 
 const router = createBrowserRouter([
@@ -22,8 +23,9 @@ const router = createBrowserRouter([
         path: "/",
         element: <Home />,
         children: [
-            { path: "/", element: <Main /> },
+            { path: "/", element: <Introduction /> },
             { path: "/projects", element: <ProjectsContent /> },
+            { path: "/resume", element: <Resume /> },
         ],
     },
     {

@@ -3,15 +3,9 @@ import { useTranslation } from "react-i18next";
 import {
     Box,
     useColorMode,
-    Accordion,
-    AccordionItem,
-    AccordionButton,
-    AccordionPanel,
-    AccordionIcon,
-} from "@chakra-ui/react";
-import { Link as ReactRouterLink } from "react-router-dom";
-import { Link as ChakraLink } from "@chakra-ui/react";
-import {
+    Flex,
+    Button,
+    Icon,
     Modal,
     ModalOverlay,
     ModalContent,
@@ -19,70 +13,109 @@ import {
     ModalFooter,
     ModalBody,
     ModalCloseButton,
-    Button,
     useDisclosure,
+    HStack,
+    Tooltip,
+    Divider,
+    Text
 } from "@chakra-ui/react";
+import { Link as ReactRouterLink } from "react-router-dom";
 import { CopyIcon } from "@chakra-ui/icons";
+import { FaHome, FaFileAlt, FaCode, FaEnvelope } from "react-icons/fa";
 
-const OpenModal = () => {
+const ContactModal = () => {
     const { isOpen, onOpen, onClose } = useDisclosure();
     const { t } = useTranslation();
+    const { colorMode } = useColorMode();
+    
+    // Esquema de colores
+    const accentColor = colorMode === "dark" ? "teal.300" : "teal.600";
+    const modalBg = colorMode === "dark" ? "gray.800" : "white";
+    const modalText = colorMode === "dark" ? "white" : "gray.800";
 
     return (
         <>
-            <Button
-                onClick={onOpen}
-                style={{
-                    margin: "0",
-                    padding: "0",
-                    backgroundColor: "rgba(0,0,0,0)",
-                    color: "white",
-                }}
-                fontWeight={"normal"}
-                boxSize={"auto"}
+            <Tooltip 
+                label={t("contact")}
+                aria-label="Contact tooltip"
+                hasArrow
             >
-                {t("contact")}
-            </Button>
-            <Modal isOpen={isOpen} onClose={onClose} isCentered>
-                <ModalOverlay />
-                <ModalContent backgroundColor="rgba(0,0,0,0.9)" color="white">
-                    <ModalHeader>{t("contact")}</ModalHeader>
+                <Button
+                    onClick={onOpen}
+                    variant="ghost"
+                    color="currentColor"
+                    size="md"
+                    p={2}
+                    _hover={{ 
+                        backgroundColor: accentColor, 
+                        color: colorMode === "dark" ? "white" : "white"
+                    }}
+                    borderRadius="full"
+                >
+                    <Icon as={FaEnvelope} boxSize={5} />
+                </Button>
+            </Tooltip>
+            
+            <Modal isOpen={isOpen} onClose={onClose} isCentered size="md">
+                <ModalOverlay backdropFilter="blur(4px)" />
+                <ModalContent 
+                    backgroundColor={modalBg} 
+                    color={modalText}
+                    borderRadius="xl"
+                    boxShadow="xl"
+                >
+                    <ModalHeader 
+                        fontSize="xl" 
+                        borderBottomWidth="1px" 
+                        pb={4}
+                        color={accentColor}
+                    >
+                        {t("contact")}
+                    </ModalHeader>
                     <ModalCloseButton />
-                    <ModalBody>
-                        <Box>Wsap: 221-690-8850</Box>
-                        <Box>
-                            E-mail: arnaboldi.juan@gmail.com{" "}
-                            <Button
-                                onClick={() => {
-                                    navigator.clipboard.writeText(
-                                        "arnaboldi.juan@gmail.com"
-                                    );
-                                }}
-                                leftIcon={<CopyIcon />}
-                                size={"xs"}
-                                bgColor={"white"}
-                                color={"black"}
-                            ></Button>
-                        </Box>
-                        <Box>
-                            <ChakraLink
-                                href="https://github.com/JIATech"
-                                isExternal
-                            >
-                                GitHub Page
-                            </ChakraLink>
-                        </Box>
-                        <Box>
-                            <ChakraLink
-                                href="https://linkedin.com/in/juan-arnaboldi"
-                                isExternal
-                            >
-                                LinkedIn Page
-                            </ChakraLink>
-                        </Box>
+                    <ModalBody py={6}>
+                        <Flex direction="column" gap={4}>
+                            <Box>
+                                <Text fontWeight="semibold" mb={2}>WhatsApp:</Text>
+                                <Flex align="center">
+                                    <Text>+54 9 (221)690-8850</Text>
+                                    <Button
+                                        ml={2}
+                                        size="sm"
+                                        onClick={() => {
+                                            navigator.clipboard.writeText("+54 9 (221)690-8850");
+                                        }}
+                                        leftIcon={<CopyIcon />}
+                                        colorScheme="teal"
+                                        variant="ghost"
+                                    >
+                                        {t("copy")}
+                                    </Button>
+                                </Flex>
+                            </Box>
+                            <Divider />
+                            <Box>
+                                <Text fontWeight="semibold" mb={2}>E-mail:</Text>
+                                <Flex align="center">
+                                    <Text>johndev@jiacode.dev</Text>
+                                    <Button
+                                        ml={2}
+                                        size="sm"
+                                        onClick={() => {
+                                            navigator.clipboard.writeText("johndev@jiacode.dev");
+                                        }}
+                                        leftIcon={<CopyIcon />}
+                                        colorScheme="teal"
+                                        variant="ghost"
+                                    >
+                                        {t("copy")}
+                                    </Button>
+                                </Flex>
+                            </Box>
+                        </Flex>
                     </ModalBody>
                     <ModalFooter>
-                        <Button colorScheme="blue" mr={3} onClick={onClose}>
+                        <Button colorScheme="teal" mr={3} onClick={onClose}>
                             {t("close")}
                         </Button>
                     </ModalFooter>
@@ -95,37 +128,114 @@ const OpenModal = () => {
 const Nav: React.FC = () => {
     const { colorMode } = useColorMode();
     const { t } = useTranslation();
+    
+    // Esquema de colores
+    const bgColor = colorMode === "dark" 
+        ? "gray.800" 
+        : "rgba(200, 200, 205, 0.85)"; // Fondo más grisáceo
+    const borderColor = colorMode === "dark" 
+        ? "gray.700" 
+        : "rgba(120, 120, 130, 0.4)"; // Borde más grisáceo
+    const textColor = colorMode === "dark" 
+        ? "white" 
+        : "gray.700"; // Texto menos contrastante
+    const accentColor = colorMode === "dark" 
+        ? "teal.300" 
+        : "teal.600";
+    
     return (
         <Box
             as="nav"
-            color={colorMode === "dark" ? "white" : "white"}
-            padding={1}
+            color={textColor}
+            py={3}
+            px={4}
+            borderBottomWidth="1px"
+            borderColor={borderColor}
+            bg={bgColor}
+            position="relative"
+            zIndex={2}
+            boxShadow="sm"
+            width="100%"
         >
-            <Box>
-                <ChakraLink as={ReactRouterLink} to="/">
-                    Home
-                </ChakraLink>
-            </Box>
-            <Accordion allowToggle>
-                <AccordionItem borderStyle={"double"} borderColor={"white"}>
-                    <h2 style={{ margin: "0", padding: "0" }}>
-                        <AccordionButton padding={0} margin={0}>
-                            <Box textAlign="left" padding={0} margin={0}>
-                                {t("projects")}
-                            </Box>
-                            <AccordionIcon />
-                        </AccordionButton>
-                    </h2>
-                    <AccordionPanel pb={4} fontSize={"14px"}>
-                        <Box>
-                            <ChakraLink as={ReactRouterLink} to="/projects">
-                                {t("projectsList")}
-                            </ChakraLink>
-                        </Box>
-                    </AccordionPanel>
-                </AccordionItem>
-            </Accordion>
-            <Box>{OpenModal()}</Box>
+            <Flex 
+                maxW="container.lg" 
+                mx="auto" 
+                justify="space-between" 
+                align="center"
+            >
+                <HStack spacing={6}>
+                    <Tooltip 
+                        label="Home"
+                        aria-label="Home tooltip"
+                        hasArrow
+                    >
+                        <Button
+                            as={ReactRouterLink}
+                            to="/"
+                            variant="ghost"
+                            color="currentColor"
+                            size="md"
+                            p={2}
+                            leftIcon={<FaHome />}
+                            _hover={{ 
+                                backgroundColor: accentColor, 
+                                color: colorMode === "dark" ? "white" : "white"
+                            }}
+                            borderRadius="md"
+                        >
+                            Home
+                        </Button>
+                    </Tooltip>
+                    
+                    <Tooltip 
+                        label="Resume"
+                        aria-label="Resume tooltip"
+                        hasArrow
+                    >
+                        <Button
+                            as={ReactRouterLink}
+                            to="/resume"
+                            variant="ghost"
+                            color="currentColor"
+                            size="md"
+                            p={2}
+                            leftIcon={<FaFileAlt />}
+                            _hover={{ 
+                                backgroundColor: accentColor, 
+                                color: colorMode === "dark" ? "white" : "white"
+                            }}
+                            borderRadius="md"
+                        >
+                            CV
+                        </Button>
+                    </Tooltip>
+                    
+                    <Tooltip 
+                        label="Projects"
+                        aria-label="Projects tooltip"
+                        hasArrow
+                    >
+                        <Button
+                            as={ReactRouterLink}
+                            to="/projects"
+                            variant="ghost"
+                            color="currentColor"
+                            size="md"
+                            p={2}
+                            leftIcon={<FaCode />}
+                            _hover={{ 
+                                backgroundColor: accentColor, 
+                                color: colorMode === "dark" ? "white" : "white"
+                            }}
+                            borderRadius="md"
+                        >
+                            {t("projects")}
+                        </Button>
+                    </Tooltip>
+                </HStack>
+                
+                <ContactModal />
+            </Flex>
         </Box>
     );
 };

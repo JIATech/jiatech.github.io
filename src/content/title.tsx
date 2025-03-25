@@ -16,7 +16,7 @@ const Title: React.FC = () => {
     const phrases1 = [
         "       Juan Ignacio Arnaboldi",
         ];
-    const phrases2 = ["                             JavaScript Full Stack Developer"];
+    const phrases2 = ["                             Backend Developer"];
     return (
         <>
             <Flex
@@ -25,7 +25,7 @@ const Title: React.FC = () => {
                 padding={{ base: 0, md: 1, lg: 1, xl: 1 }}
             >
                 <Avatar
-                    name="Juan Arnaboldi"
+                    name="Juan Ignacio Arnaboldi"
                     src="../../assets/profile2.jpeg"
                     size={"md"}
                     onClick={onOpen}
@@ -41,7 +41,7 @@ const Title: React.FC = () => {
                                 src="../../assets/profile2.jpeg"
                                 display={"block"}
                                 m={"auto"}
-                                alt="Juan Arnaboldi"
+                                alt="Juan Ignacio Arnaboldi"
                                 borderRadius={"full"}
                                 filter={"grayscale(100%)"}
                             />

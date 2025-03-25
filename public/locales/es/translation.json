@@ -13,7 +13,7 @@
     "experience": "Experiencia",
     "company1": "Ministerio de Justicia, Arg.",
     "position": "Puesto:",
-    "position1": "Desarrollador de Sistemas (Full Stack)",
+    "position1": "Desarrollador Backend",
     "currentPosition": "Tiempo en el Puesto Actual:",
     "projects": "Proyectos",
     "projectsList": "Lista de Proyectos",
@@ -26,11 +26,12 @@
     "projectComingSoon": "Próximamente...",
     "projectsDescription": "Portafolio de proyectos de desarrollo web y aplicaciones creadas con diferentes tecnologías",
     "projectsIntro": "Bienvenido a mi sección de proyectos. Aquí iré agregando los diferentes trabajos en los que estoy trabajando o he completado.",
-    "skills": "Habilidades Técnicas Principales",
-    "skills2": "Habilidades Técnicas Moderadas",
+    "skills": "Habilidades Técnicas",
+    "skills2": "Habilidades Técnicas Secundarias",
     "header1": "No programes para solucionar problemas, programa para crear soluciones.",
     "contact": "Contacto",
     "close": "Cerrar",
+    "copy": "Copiar",
     "vermas": "Ver más",
     "dias": "días",
     "meses": "meses",
@@ -42,5 +43,31 @@
     "description4": "• Herramientas Modernas de Desarrollo: Astro, Supabase, Docker y Redis para ambientes escalables y de alta disponibilidad",
     "description5": "• Control de Versiones: Git y Github",
     "description6": "• Desarrollo Frontend: HTML+CSS, TailwindCSS, React y Next.js",
-    "description7": "• Adaptabilidad y Aprendizaje Continuo"
+    "description7": "• Adaptabilidad y Aprendizaje",
+    "cv": {
+        "title": "Curriculum Vitae",
+        "subtitle": "Desarrollador Backend con visión de producto completo",
+        "profile": {
+            "name": "Juan Ignacio Arnaboldi",
+            "title": "Desarrollador Backend",
+            "location": "La Plata, Buenos Aires, Argentina",
+            "contact": "johndev@jiacode.dev"
+        },
+        "skills": {
+            "main": "Habilidades Principales",
+            "backend": "Backend",
+            "databases": "Bases de Datos",
+            "devops": "DevOps",
+            "frontend": "Frontend"
+        }
+    },
+    "home": {
+        "intro": {
+            "title": "Sobre Mí",
+            "paragraph1": "Soy un desarrollador Backend especializado en crear soluciones escalables y robustas. Con experiencia en Node.js, TypeScript y bases de datos relacionales y NoSQL, me enfoco en construir arquitecturas eficientes que soporten el crecimiento y la evolución de los productos digitales.",
+            "paragraph2": "Mi visión holística del desarrollo de software me permite entender y colaborar efectivamente con todas las áreas involucradas en la creación de productos tecnológicos, desde la experiencia de usuario hasta la infraestructura.",
+            "resume_button": "Ver Curriculum",
+            "projects_button": "Ver Proyectos"
+        }
+    }
 }

@@ -1,7 +1,6 @@
 import { I18nextProvider } from "react-i18next";
 import i18n from "../i18n";
 import { Grid, GridItem, SlideFade, useColorMode, Box } from "@chakra-ui/react";
-import Title from "./content/title";
 import Header from "./content/header";
 import Nav from "./content/nav";
 import Footer from "./content/footer";
@@ -28,129 +27,123 @@ const Home = () => {
     }
     
     return (
-        <SlideFade in={true} delay={0.5}>
-            <>
-                <SEO 
-                    title={pageTitle} 
-                    description={pageDescription} 
-                    url={canonicalUrl}
-                    keywords="desarrollo web, portfolio, proyectos, tecnología"
-                />
-                <VideoBackground>
-                    <Box overflowX="auto">
-                        <Grid
-                            templateRows={{
-                                base: "12% 6%",
-                                lg: "20% 6% auto 20%",
-                            }} // Alto de header, title, contenido principal y footer
-                            templateColumns="20vh auto" // Ancho de nav y main
-                            templateAreas={`"header header"
-                            "nav title"
-                            "nav main"
-                            "nav footer"`} // Áreas definidas
-                            gap={0}
-                            minW="100vh"
-                            h="100vh"
-                            margin={{ base: "0", lg: "0 25vh" }}
-                            className="content-overlay"
-                            backgroundColor={
-                                colorMode === "dark"
-                                    ? "rgba(0,0,0,0)"
-                                    : "rgba(0,0,0,0.40)"
-                            }
-                        >
-                            <GridItem
-                                w="100%"
-                                h="100%"
-                                area="header"
-                                border={"2px"}
-                                borderColor={
-                                    colorMode === "dark" ? "white" : "black"
-                                }
+        <I18nextProvider i18n={i18n}>
+            <SlideFade in={true} delay={0.5}>
+                <>
+                    <SEO 
+                        title={pageTitle} 
+                        description={pageDescription} 
+                        url={canonicalUrl}
+                        keywords="desarrollo web, portfolio, proyectos, tecnología"
+                    />
+                    <VideoBackground>
+                        <Box overflowX="auto">
+                            <Grid
+                                templateRows={{
+                                    base: "auto auto 1fr auto",
+                                    lg: "auto auto 1fr auto",
+                                }}
+                                templateColumns="1fr"
+                                templateAreas={`"header"
+                                "nav"
+                                "main"
+                                "footer"`}
+                                gap={0}
+                                minW="100%"
+                                h="100vh"
+                                margin="0"
+                                className="content-overlay"
                                 backgroundColor={
                                     colorMode === "dark"
                                         ? "rgba(0,0,0,0)"
-                                        : "rgba(0,0,0,0.7)"
+                                        : "rgba(200, 200, 205, 0.85)"
                                 }
                             >
-                                <Header />
-                            </GridItem>
-                            <GridItem
-                                w="100%"
-                                h="100%"
-                                area="nav"
-                                border={"2px"}
-                                borderColor={
-                                    colorMode === "dark" ? "white" : "black"
-                                }
-                                borderRight={"none"}
-                                borderTop={"none"}
-                                backgroundColor={
-                                    colorMode === "dark"
-                                        ? "rgba(0,0,0,0)"
-                                        : "rgba(0,0,0,0.7)"
-                                }
-                            >
-                                <Nav />
-                            </GridItem>
-                            <GridItem
-                                w="100%"
-                                h="100%"
-                                area="title"
-                                border={"2px"}
-                                borderTop={"none"}
-                                borderBottom={"none"}
-                                backgroundColor={
-                                    colorMode === "dark"
-                                        ? "rgba(0,0,0,0)"
-                                        : "rgba(0,0,0,0.7)"
-                                }
-                                fontSize={{ base: "1.5rem", lg: "2rem" }}
-                            >
-                                <Title />
-                            </GridItem>
-                            <GridItem
-                                w="100%"
-                                h="100%"
-                                area="main"
-                                overflowY={"auto"}
-                                borderTop={"none"}
-                                border={"2px"}
-                                borderColor={
-                                    colorMode === "dark" ? "white" : "black"
-                                }
-                                backgroundColor={
-                                    colorMode === "dark"
-                                        ? "rgba(0,0,0,0)"
-                                        : "rgba(0,0,0,0.7)"
-                                }
-                            >
-                                <I18nextProvider i18n={i18n}>
-                                    {outlet}
-                                </I18nextProvider>
-                            </GridItem>
-                            <GridItem
-                                w="100%"
-                                h="100%"
-                                area="footer"
-                                border={"2px"}
-                                borderColor={
-                                    colorMode === "dark" ? "white" : "black"
-                                }
-                                borderTop={"none"}
-                                backgroundColor={
-                                    colorMode === "dark"
-                                        ? "rgba(0,0,0,0)"
-                                        : "rgba(0,0,0,0.7)"
-                                }
-                            >
-                                <Footer />
-                            </GridItem>
-                        </Grid>
-                    </Box>
-                </VideoBackground>
-            </>
-        </SlideFade>
+                                <GridItem
+                                    w="100%"
+                                    h="100%"
+                                    area="header"
+                                    border="2px"
+                                    borderColor={
+                                        colorMode === "dark" ? "white" : "rgba(60, 60, 60, 0.5)"
+                                    }
+                                    backgroundColor={
+                                        colorMode === "dark"
+                                            ? "rgba(0,0,0,0)"
+                                            : "rgba(200, 200, 205, 0.85)"
+                                    }
+                                >
+                                    <Header />
+                                </GridItem>
+                                <GridItem
+                                    w="100%"
+                                    h="auto"
+                                    area="nav"
+                                    border="2px"
+                                    borderColor={
+                                        colorMode === "dark" ? "white" : "rgba(60, 60, 60, 0.5)"
+                                    }
+                                    borderTop="none"
+                                    backgroundColor={
+                                        colorMode === "dark"
+                                            ? "rgba(0,0,0,0)"
+                                            : "rgba(200, 200, 205, 0.85)"
+                                    }
+                                >
+                                    <Nav />
+                                </GridItem>
+                                <GridItem
+                                    w="100%"
+                                    h="100%"
+                                    area="main"
+                                    border="2px"
+                                    borderColor={
+                                        colorMode === "dark" ? "white" : "rgba(60, 60, 60, 0.5)"
+                                    }
+                                    borderTop="none"
+                                    pt={6}
+                                    pb={6}
+                                    overflow="auto"
+                                    backgroundColor={
+                                        colorMode === "dark"
+                                            ? "rgba(0,0,0,0)"
+                                            : "rgba(200, 200, 205, 0.8)"
+                                    }
+                                    display="flex"
+                                    flexDirection="column"
+                                    alignItems="center"
+                                    justifyContent="flex-start"
+                                >
+                                    <Box
+                                        width={{ base: "90%", md: "80%", lg: "70%" }}
+                                        maxWidth="1200px"
+                                    >
+                                        {outlet}
+                                    </Box>
+                                </GridItem>
+                                <GridItem
+                                    w="100%"
+                                    h="auto"
+                                    area="footer"
+                                    border="2px"
+                                    borderColor={
+                                        colorMode === "dark" ? "white" : "rgba(60, 60, 60, 0.5)"
+                                    }
+                                    borderTop="none"
+                                    backgroundColor={
+                                        colorMode === "dark"
+                                            ? "rgba(0,0,0,0)"
+                                            : "rgba(200, 200, 205, 0.85)"
+                                    }
+                                >
+                                    <Footer />
+                                </GridItem>
+                            </Grid>
+                        </Box>
+                    </VideoBackground>
+                </>
+            </SlideFade>
+        </I18nextProvider>
     );
 };
 
