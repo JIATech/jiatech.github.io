@@ -13,11 +13,16 @@ import {
 } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
 import { MdWork, MdSchool } from "react-icons/md";
+import TimeSince from "../TimeSince";
 
+const period2 = () => {
+  return <TimeSince startDate={new Date(2023, 9, 27)} />;
+};
 interface TimelineItemProps {
   title: string;
   organization: string;
   period: string;
+  timesince?: React.ReactNode;
   description: string;
   skills?: string[];
   icon: React.ElementType;
@@ -27,6 +32,7 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
   title, 
   organization, 
   period, 
+  timesince, 
   description, 
   skills = [],
   icon
@@ -74,7 +80,9 @@ const TimelineItem: React.FC<TimelineItemProps> = ({
           <Text fontWeight="bold" color={textColor}>{organization}</Text>
           <Text fontSize="sm" color={subtleColor}>{period}</Text>
         </HStack>
-        
+        <HStack>
+          {timesince && <Text fontSize="sm" color={subtleColor}>{period2()}</Text>}
+        </HStack>
         <Text color={textColor}>{description}</Text>
         
         {skills.length > 0 && (
@@ -124,17 +132,29 @@ const ExperienceSection: React.FC = () => {
             title={t("position1")}
             organization={t("company1")}
             period="2020 - Presente"
-            description="Desarrollo de sistemas internos para la gestión ministerial, implementando soluciones backend robustas con Node.js, Express y bases de datos SQL. Integración con servicios externos y APIs gubernamentales."
-            skills={["Node.js", "Express", "PostgreSQL", "API REST", "JWT"]}
+            timesince={period2()}
+            description={t("description1")}
+            skills={[
+              t("nodeJs"),
+              t("express"),
+              t("postgreSQL"),
+              t("apiRest"),
+              t("jwt")
+            ]}
             icon={MdWork}
           />
           
           <TimelineItem 
-            title="Analista Programador"
-            organization="Consultora Tecnológica"
+            title={t("position2")}
+            organization={t("company2")}
             period="2018 - 2020"
-            description="Desarrollo de soluciones a medida para clientes del sector privado. Implementación de APIs y servicios backend. Mantenimiento de bases de datos y optimización de rendimiento."
-            skills={["Java", "Spring Boot", "MySQL", "Docker"]}
+            description={t("description2")}
+            skills={[
+              t("java"),
+              t("springBoot"),
+              t("mySQL"),
+              t("docker")
+            ]}
             icon={MdWork}
           />
         </VStack>
@@ -147,17 +167,25 @@ const ExperienceSection: React.FC = () => {
             title={t("degree")}
             organization={t("university")}
             period={t("present")}
-            description="Formación en desarrollo de software, algoritmos, estructuras de datos, arquitectura de sistemas y gestión de proyectos tecnológicos."
-            skills={["Algoritmos", "Arquitectura de Software", "Gestión de Proyectos"]}
+            description={t("degreeDescription")}
+            skills={[
+              t("algorithms"),
+              t("softwareArchitecture"),
+              t("projectManagement")
+            ]}
             icon={MdSchool}
           />
           
           <TimelineItem 
-            title="Certificación en Desarrollo Backend"
-            organization="Plataforma de Educación Online"
-            period="2019"
-            description="Especialización en desarrollo de APIs, microservicios y bases de datos."
-            skills={["Node.js", "MongoDB", "Microservicios"]}
+            title={t("certification")}
+            organization={t("onlinePlatform")}
+            period={t("year2019")}
+            description={t("descriptionCertification")}
+            skills={[
+              t("nodeJs"),
+              t("mongoDB"),
+              t("microservices")
+            ]}
             icon={MdSchool}
           />
         </VStack>

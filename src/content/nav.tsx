@@ -76,14 +76,14 @@ const ContactModal = () => {
                     <ModalBody py={6}>
                         <Flex direction="column" gap={4}>
                             <Box>
-                                <Text fontWeight="semibold" mb={2}>WhatsApp:</Text>
+                                <Text fontWeight="semibold" mb={2}>Telegram:</Text>
                                 <Flex align="center">
-                                    <Text>+54 9 (221)690-8850</Text>
+                                    <Text>https://t.me/arnold2024</Text>
                                     <Button
                                         ml={2}
                                         size="sm"
                                         onClick={() => {
-                                            navigator.clipboard.writeText("+54 9 (221)690-8850");
+                                            navigator.clipboard.writeText("https://t.me/arnold2024");
                                         }}
                                         leftIcon={<CopyIcon />}
                                         colorScheme="teal"
@@ -230,6 +230,29 @@ const Nav: React.FC = () => {
                             borderRadius="md"
                         >
                             {t("projects")}
+                        </Button>
+                    </Tooltip>
+                    
+                    <Tooltip 
+                        label="Contact"
+                        aria-label="Contact page tooltip"
+                        hasArrow
+                    >
+                        <Button
+                            as={ReactRouterLink}
+                            to="/contact"
+                            variant="ghost"
+                            color="currentColor"
+                            size="md"
+                            p={2}
+                            leftIcon={<FaEnvelope />}
+                            _hover={{ 
+                                backgroundColor: accentColor, 
+                                color: colorMode === "dark" ? "white" : "white"
+                            }}
+                            borderRadius="md"
+                        >
+                            {t('contactForm.title')}
                         </Button>
                     </Tooltip>
                 </HStack>

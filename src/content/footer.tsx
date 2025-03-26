@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
                             transition="color 0.2s"
                         />
                     </Link>
-                    <Link href="https://linkedin.com/in/juan-arnaboldi" isExternal>
+                    <Link href="https://www.linkedin.com/in/juan-arnaboldi/" isExternal>
                         <Icon 
                             as={FaLinkedin} 
                             w={5} 

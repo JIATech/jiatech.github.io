@@ -106,7 +106,7 @@ const Introduction: React.FC = () => {
                   <Link href="https://github.com/JIATech" isExternal>
                     <Icon as={FaGithub} boxSize={6} color={accentColor} />
                   </Link>
-                  <Link href="https://linkedin.com/in/jiatech" isExternal>
+                  <Link href="https://www.linkedin.com/in/juan-arnaboldi/" isExternal>
                     <Icon as={FaLinkedin} boxSize={6} color={accentColor} />
                   </Link>
                   <Link href="mailto:johndev@jiacode.dev">

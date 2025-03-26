@@ -8,7 +8,7 @@ import {
     Box,
     useColorMode,
 } from "@chakra-ui/react";
-import TimeSince from "./refreshDate";
+import TimeSince from "../components/TimeSince";
 import {
     Accordion,
     AccordionItem,

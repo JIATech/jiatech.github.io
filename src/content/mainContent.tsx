@@ -1,6 +1,6 @@
 // import CV_1 from "./cv-1";
 import { Text, Stack, Divider, Center, Box } from "@chakra-ui/react";
-import TimeSince from "./refreshDate";
+import TimeSince from "../components/TimeSince";
 import {
     Accordion,
     AccordionItem,

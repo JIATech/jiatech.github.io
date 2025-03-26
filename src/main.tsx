@@ -16,6 +16,7 @@ import {
 import ProjectsContent from "./content/projects.tsx";
 import Introduction from "./components/HomePage/Introduction.tsx";
 import Resume from "./pages/Resume.tsx";
+import Contact from "./pages/Contact.tsx";
 import reportWebVitals from "./utils/reportWebVitals";
 
 const router = createBrowserRouter([
@@ -26,6 +27,7 @@ const router = createBrowserRouter([
             { path: "/", element: <Introduction /> },
             { path: "/projects", element: <ProjectsContent /> },
             { path: "/resume", element: <Resume /> },
+            { path: "/contact", element: <Contact /> },
         ],
     },
     {

@@ -12,9 +12,10 @@ import {
   Link
 } from "@chakra-ui/react";
 import { useTranslation } from "react-i18next";
-import { MdLocationOn } from "react-icons/md";
+import { MdLocationOn, MdPhone } from "react-icons/md";
 import { FaBirthdayCake } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
+import TimeSince from "../TimeSince";
 
 const ProfileSection: React.FC = () => {
   const { colorMode } = useColorMode();
@@ -67,18 +68,22 @@ const ProfileSection: React.FC = () => {
         <Flex wrap="wrap" justify="space-between" gap={4}>
           <HStack spacing={2}>
             <Icon as={FaBirthdayCake} color={accentColor} />
-            <Text color={textColor}>{t("birthdate")}</Text>
+            <Text color={textColor}>
+              {t("birthdate")}<br/>
+              <TimeSince startDate={new Date(1991, 12, 25)} />
+            </Text>
           </HStack>
-          
           <HStack spacing={2}>
             <Icon as={MdLocationOn} color={accentColor} />
             <Text color={textColor}>La Plata, Buenos Aires, Argentina</Text>
           </HStack>
           
-          {/* <HStack spacing={2}>
+          <HStack spacing={2}>
             <Icon as={MdPhone} color={accentColor} />
-            <Text color={textColor}>+54 9 221-690-8850</Text>
-          </HStack> */}
+            <Link href="https://t.me/arnold2024" color={textColor} isExternal>
+              Telegram
+            </Link>
+          </HStack>
         </Flex>
       </VStack>
     </Box>

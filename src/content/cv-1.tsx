@@ -1,7 +1,7 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
 import { Text, Stack, Divider, Center, Box } from "@chakra-ui/react";
-import TimeSince from "./refreshDate";
+import TimeSince from "../components/TimeSince";
 import {
     Accordion,
     AccordionItem,
@@ -21,9 +21,9 @@ const CV_1: React.FC<{ language?: string }> = ({ language }) => {
     const phrases4 = [t("nationality")];
     const phrases5 = [t("argentinian")];
     const phrases6 = [t("phone")];
-    const phrases7 = ["+54 9 221 690 8850"];
+    const phrases7 = ["t.me/arnold2024"];
     const phrases8 = ["E-mail:"];
-    const phrases9 = ["arnaboldi.juan@gmail.com"];
+    const phrases9 = ["johndev@jiacode.dev"];
     const phrases10 = [t("location")];
     const phrases11 = ["La Plata, Buenos Aires"];
     const phrases12 = [t("education")];
